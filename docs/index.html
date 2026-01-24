@@ -2,110 +2,579 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DL Ops Assignment 1 | Abhay Kashyap</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-space: #0a0e27;
+            --nebula-purple: #5b21b6;
+            --nebula-blue: #1e3a8a;
+            --star-white: #f0f9ff;
+            --cosmic-cyan: #06b6d4;
+            --solar-gold: #fbbf24;
+            --meteor-red: #dc2626;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1e1b4b 50%, #0f172a 100%);
+            color: var(--star-white);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, white, transparent),
+                radial-gradient(1px 1px at 33% 80%, white, transparent);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            animation: stars 120s linear infinite;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes stars {
+            from { background-position: 0% 0%; }
+            to { background-position: 100% 100%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(6, 182, 212, 0.8), 0 0 60px rgba(6, 182, 212, 0.5); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(91, 33, 182, 0.2), rgba(30, 58, 138, 0.2));
+            border-radius: 30px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(6, 182, 212, 0.3);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--cosmic-cyan), var(--solar-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--cosmic-cyan);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(91, 33, 182, 0.3), rgba(30, 58, 138, 0.3));
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cosmic-cyan);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .info-card strong {
+            color: var(--solar-gold);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .section {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 27, 75, 0.8));
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(6, 182, 212, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+            transform: translateX(5px);
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--cosmic-cyan);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(91, 33, 182, 0.2), rgba(30, 58, 138, 0.2));
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--cosmic-cyan);
+        }
+
+        .metric-card h3 {
+            color: var(--solar-gold);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cosmic-cyan);
+            font-weight: bold;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--nebula-purple), var(--nebula-blue));
+            color: var(--star-white);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .highlight {
+            color: var(--solar-gold);
+            font-weight: 600;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--nebula-purple), var(--cosmic-cyan));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.5);
+            border-color: var(--cosmic-cyan);
+        }
+
+        .best-result {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(220, 38, 38, 0.2));
+            border: 2px solid var(--solar-gold);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .best-result h3 {
+            color: var(--solar-gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            color: rgba(240, 249, 255, 0.6);
+            border-top: 2px solid rgba(6, 182, 212, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1rem; }
+            h2 { font-size: 1.4rem; }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>CSL7120 – Deep Learning Operations</h1>
+            <p class="subtitle">Assignment 1: Image Classification & Performance Analysis</p>
+        </header>
 
-    <header>
-        <h1>CSL7120 – Deep Learning Operations</h1>
-        <p>Assignment 1: Image Classification & Performance Analysis</p>
-    </header>
-
-    <section class="info-grid">
-        <div><strong>Name:</strong> Abhay Kashyap</div>
-        <div><strong>Roll No:</strong> B22CS001</div>
-        <div><strong>Course:</strong> CSL7120</div>
-        <div><strong>Institution:</strong> IIT Jodhpur (DL Ops)</div>
-    </section>
-
-    <section>
-        <h2>📌 Assignment Objective</h2>
-        <p>
-            The goal of this assignment is to perform a comprehensive experimental study on
-            image classification using deep learning and classical machine learning models.
-            The experiments focus on understanding the impact of different hyperparameters,
-            optimizers, compute devices, and architectures on model accuracy, training time,
-            and computational cost.
-        </p>
-    </section>
-
-    <section>
-        <h2>📊 Datasets Used</h2>
-        <ul>
-            <li><strong>MNIST</strong> – Handwritten digit classification</li>
-            <li><strong>FashionMNIST</strong> – Clothing image classification</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>🧠 Models Implemented</h2>
-        <ul>
-            <li>ResNet18</li>
-            <li>ResNet50</li>
-            <li>Support Vector Machine (SVM)</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>⚙️ Hyperparameters Explored</h2>
-        <ul>
-            <li>Batch Size: 16, 32</li>
-            <li>Learning Rates: 0.001, 0.0001</li>
-            <li>Optimizers: SGD, Adam</li>
-            <li>Epochs: 1, 2</li>
-            <li>Pin Memory: True, False</li>
-            <li>Device: CPU vs GPU</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>📈 Key Experimental Findings</h2>
-        <ul>
-            <li>Adam optimizer generally converged faster and achieved higher accuracy.</li>
-            <li>Lower learning rates performed better for deeper models like ResNet50.</li>
-            <li>Pin memory improved training performance when using GPU.</li>
-            <li>GPU significantly reduced training time compared to CPU.</li>
-            <li>RBF kernel outperformed polynomial kernels in SVM experiments.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>🏆 Best Performing Configurations</h2>
-        <p>
-            The best performance on MNIST and FashionMNIST datasets was achieved using
-            Adam optimizer with a learning rate of 0.0001 and batch size of 16.
-            Detailed numerical results, accuracy tables, and training time comparisons
-            are provided in the full report.
-        </p>
-    </section>
-
-    <section>
-        <h2>📄 Full Report & Notebooks</h2>
-        <p>
-            Due to the extensive nature of experiments and result tables, the complete
-            analysis is documented in the official assignment report.
-        </p>
-
-        <div class="links">
-            <a href="B22CS001_Abhay_Kashyap_Ass1.pdf" target="_blank">📘 View Full PDF Report</a>
-            <a href="https://github.com/abhaykashyap31/MLOps-AbhayKashyap-B22CS001" target="_blank">💻 GitHub Repository</a>
+        <div class="info-grid">
+            <div class="info-card">
+                <strong>👨‍🚀 STUDENT</strong>
+                <div>Abhay Kashyap</div>
+            </div>
+            <div class="info-card">
+                <strong>🎯 ROLL NUMBER</strong>
+                <div>B22CS001</div>
+            </div>
+            <div class="info-card">
+                <strong>📚 COURSE</strong>
+                <div>CSL7120</div>
+            </div>
+            <div class="info-card">
+                <strong>🏛️ INSTITUTION</strong>
+                <div>IIT Jodhpur</div>
+            </div>
         </div>
-    </section>
 
-    <section>
-        <h2>🔗 Implementation Details</h2>
-        <ul>
-            <li>Frameworks: PyTorch, TorchVision, Scikit-learn</li>
-            <li>Evaluation Metrics: Test Accuracy, Training Time, FLOPs</li>
-            <li>Version Control: Git & GitHub</li>
-            <li>Experiments conducted using both CPU and GPU environments</li>
-        </ul>
-    </section>
+        <div class="section">
+            <h2><span class="emoji">🎯</span> Mission Objective</h2>
+            <p>
+                This assignment presents a comprehensive experimental study on image classification using deep learning and classical machine learning models. The experiments systematically analyze the impact of different hyperparameters, optimizers, compute devices, and architectures on model accuracy, training time, and computational cost across two benchmark datasets.
+            </p>
+        </div>
 
-    <footer>
-        <p>© 2026 Abhay Kashyap | CSL7120 – DL Ops Assignment 1</p>
-    </footer>
+        <div class="section">
+            <h2><span class="emoji">📊</span> Datasets Explored</h2>
+            <div class="content-grid">
+                <div class="metric-card">
+                    <h3>MNIST</h3>
+                    <p>Handwritten digit classification dataset (70,000 grayscale images, 10 classes)</p>
+                </div>
+                <div class="metric-card">
+                    <h3>FashionMNIST</h3>
+                    <p>Clothing and fashion item classification (70,000 grayscale images, 10 classes)</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="section">
+            <h2><span class="emoji">🤖</span> Neural Architectures Deployed</h2>
+            <ul>
+                <li><strong>ResNet18</strong> – 18-layer residual network with skip connections</li>
+                <li><strong>ResNet50</strong> – Deeper 50-layer architecture for complex pattern recognition</li>
+                <li><strong>Support Vector Machine (SVM)</strong> – Classical ML with RBF and polynomial kernels</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">⚙️</span> Hyperparameter Matrix</h2>
+            <div class="content-grid">
+                <div class="metric-card">
+                    <h3>Training Parameters</h3>
+                    <ul>
+                        <li>Batch Sizes: 16, 32</li>
+                        <li>Epochs: 1, 2</li>
+                        <li>Learning Rates: 0.001, 0.0001</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h3>Optimizers</h3>
+                    <ul>
+                        <li>SGD (Stochastic Gradient Descent)</li>
+                        <li>Adam (Adaptive Moment Estimation)</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h3>System Configuration</h3>
+                    <ul>
+                        <li>Pin Memory: True, False</li>
+                        <li>Compute Devices: CPU, GPU</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h3>SVM Parameters</h3>
+                    <ul>
+                        <li>C Values: 0.1, 1, 10</li>
+                        <li>Gamma: scale, auto</li>
+                        <li>Kernels: RBF, Polynomial (deg 2, 3)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🏆</span> Top Performance Results</h2>
+            
+            <div class="best-result">
+                <h3>⭐ Best MNIST Configuration</h3>
+                <p><strong>ResNet18 + Adam + LR 0.0001 + Batch 16 + Epochs 2</strong></p>
+                <p class="highlight">Accuracy: 99.17%</p>
+            </div>
+
+            <div class="best-result">
+                <h3>⭐ Best FashionMNIST Configuration</h3>
+                <p><strong>ResNet18 + Adam + LR 0.0001 + Batch 32 + Epochs 2</strong></p>
+                <p class="highlight">Accuracy: 90.28%</p>
+            </div>
+
+            <div class="best-result">
+                <h3>⭐ Best SVM Results</h3>
+                <p><strong>MNIST:</strong> RBF Kernel, C=10, Gamma=scale → <span class="highlight">96.70%</span></p>
+                <p><strong>FashionMNIST:</strong> RBF Kernel, C=10, Gamma=scale → <span class="highlight">87.83%</span></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🔬</span> Key Research Findings</h2>
+            <div class="content-grid">
+                <div class="metric-card">
+                    <h3>Optimizer Performance</h3>
+                    <p>Adam optimizer consistently converged faster and achieved higher accuracy compared to SGD, especially with lower learning rates. Adam's adaptive learning rate proved crucial for deeper networks like ResNet50.</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Learning Rate Impact</h3>
+                    <p>Lower learning rate (0.0001) performed significantly better for deeper models. ResNet50 showed dramatic improvement with LR 0.0001, while ResNet18 was more robust to LR variations.</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Hardware Acceleration</h3>
+                    <p>GPU training reduced training time by ~60-70% compared to CPU. Pin memory optimization provided noticeable performance gains when using GPU acceleration.</p>
+                </div>
+                <div class="metric-card">
+                    <h3>SVM Kernel Analysis</h3>
+                    <p>RBF kernel significantly outperformed polynomial kernels across both datasets. Polynomial kernels with 'auto' gamma showed poor performance and excessive training times.</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Batch Size Effects</h3>
+                    <p>Batch size 16 generally provided better accuracy than 32, especially for Adam optimizer. Smaller batches allowed more frequent weight updates, improving convergence.</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Computational Cost</h3>
+                    <p>ResNet50 required 2.27× more FLOPs than ResNet18 (4.132 vs 1.824 GFLOPs) but provided marginal accuracy improvements on MNIST while showing better performance on FashionMNIST.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📈</span> Computational Performance Analysis</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Model</th>
+                            <th>Optimizer</th>
+                            <th>Accuracy (%)</th>
+                            <th>Train Time (ms)</th>
+                            <th>GFLOPs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CPU</td>
+                            <td>ResNet18</td>
+                            <td>SGD</td>
+                            <td>86.56</td>
+                            <td>3,269,880.52</td>
+                            <td>1.824</td>
+                        </tr>
+                        <tr>
+                            <td>CPU</td>
+                            <td>ResNet18</td>
+                            <td>Adam</td>
+                            <td>85.46</td>
+                            <td>3,090,956.70</td>
+                            <td>1.824</td>
+                        </tr>
+                        <tr>
+                            <td>GPU</td>
+                            <td>ResNet18</td>
+                            <td>SGD</td>
+                            <td>83.38</td>
+                            <td class="highlight">121,377.28</td>
+                            <td>1.824</td>
+                        </tr>
+                        <tr>
+                            <td>GPU</td>
+                            <td>ResNet18</td>
+                            <td>Adam</td>
+                            <td>83.81</td>
+                            <td>127,455.77</td>
+                            <td>1.824</td>
+                        </tr>
+                        <tr>
+                            <td>CPU</td>
+                            <td>ResNet50</td>
+                            <td>Adam</td>
+                            <td>81.40</td>
+                            <td>10,534,333.43</td>
+                            <td>4.132</td>
+                        </tr>
+                        <tr>
+                            <td>GPU</td>
+                            <td>ResNet50</td>
+                            <td>Adam</td>
+                            <td>84.35</td>
+                            <td class="highlight">250,968.11</td>
+                            <td>4.132</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">GPU acceleration achieved ~96% reduction in training time for ResNet18 on FashionMNIST</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">💡</span> Critical Insights</h2>
+            <ul>
+                <li><strong>Optimizer Selection:</strong> Adam's adaptive learning rates make it superior for deep networks, while SGD requires careful learning rate tuning</li>
+                <li><strong>Hardware Utilization:</strong> GPU acceleration is essential for practical deep learning workflows, reducing training time from hours to minutes</li>
+                <li><strong>Kernel Selection in SVM:</strong> RBF kernel's ability to model non-linear boundaries makes it the preferred choice for image classification tasks</li>
+                <li><strong>Regularization Trade-offs:</strong> Higher C values (C=10) in SVM improved accuracy but increased overfitting risk and training time</li>
+                <li><strong>Dataset Complexity:</strong> FashionMNIST proved more challenging than MNIST, with all models showing 8-10% lower accuracy</li>
+                <li><strong>Memory Optimization:</strong> Pin memory feature provided measurable improvements in GPU training throughput</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🛠️</span> Technical Implementation</h2>
+            <div class="content-grid">
+                <div class="metric-card">
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li>PyTorch & TorchVision</li>
+                        <li>Scikit-learn</li>
+                        <li>NumPy & Pandas</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h3>Evaluation Metrics</h3>
+                    <ul>
+                        <li>Test Accuracy (%)</li>
+                        <li>Training Time (ms)</li>
+                        <li>FLOPs (GFLOPs)</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Jupyter Notebooks</li>
+                        <li>Git Version Control</li>
+                        <li>GitHub Repository</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📚</span> Complete Documentation</h2>
+            <p style="margin-bottom: 20px;">
+                Access the full experimental report, detailed result tables, statistical analysis, and complete implementation code through the following resources:
+            </p>
+            <div class="links">
+                <a href="B22CS001_Abhay_Kashyap_Ass1.pdf" target="_blank" class="btn">
+                    📄 Full PDF Report
+                </a>
+                <a href="https://github.com/abhaykashyap31/MLOps-AbhayKashyap-B22CS001" target="_blank" class="btn">
+                    💻 GitHub Repository
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>🚀 Deep Learning Operations • CSL7120 Assignment 1</p>
+            <p style="margin-top: 10px;">Abhay Kashyap • B22CS001 • IIT Jodhpur • 2026</p>
+        </footer>
+    </div>
 </body>
 </html>
