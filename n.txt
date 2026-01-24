@@ -1,0 +1,394 @@
+Time
+#
+Log Message
+7.6s	0	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.6s	1	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.6s	2	0.00s - to python to disable frozen modules.
+7.6s	3	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.2s	4	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.2s	5	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.2s	6	0.00s - to python to disable frozen modules.
+8.2s	7	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+22.3s	8	
+  0%|          | 0.00/26.4M [00:00<?, ?B/s]
+22.4s	9	
+  0%|          | 0.00/26.4M [00:00<?, ?B/s]
+  0%|          | 32.8k/26.4M [00:00<01:23, 315kB/s]
+22.5s	10	
+  0%|          | 32.8k/26.4M [00:00<01:23, 315kB/s]
+  0%|          | 65.5k/26.4M [00:00<01:25, 308kB/s]
+22.6s	11	
+  0%|          | 65.5k/26.4M [00:00<01:25, 308kB/s]
+  0%|          | 131k/26.4M [00:00<00:58, 446kB/s] 
+22.7s	12	
+  0%|          | 131k/26.4M [00:00<00:58, 446kB/s] 
+  1%|          | 197k/26.4M [00:00<00:51, 510kB/s]
+22.8s	13	
+  1%|          | 197k/26.4M [00:00<00:51, 510kB/s]
+  2%|▏         | 426k/26.4M [00:00<00:23, 1.10MB/s]
+22.9s	14	
+  2%|▏         | 426k/26.4M [00:00<00:23, 1.10MB/s]
+  3%|▎         | 852k/26.4M [00:00<00:12, 2.07MB/s]
+23.0s	15	
+  3%|▎         | 852k/26.4M [00:00<00:12, 2.07MB/s]
+  6%|▌         | 1.61M/26.4M [00:00<00:06, 3.68MB/s]
+23.1s	16	
+  6%|▌         | 1.61M/26.4M [00:00<00:06, 3.68MB/s]
+ 12%|█▏        | 3.21M/26.4M [00:00<00:03, 7.26MB/s]
+23.3s	17	
+ 12%|█▏        | 3.21M/26.4M [00:00<00:03, 7.26MB/s]
+ 24%|██▍       | 6.42M/26.4M [00:00<00:01, 14.3MB/s]
+23.4s	18	
+ 24%|██▍       | 6.42M/26.4M [00:00<00:01, 14.3MB/s]
+ 34%|███▍      | 8.95M/26.4M [00:01<00:01, 16.7MB/s]
+23.5s	19	
+ 34%|███▍      | 8.95M/26.4M [00:01<00:01, 16.7MB/s]
+ 40%|████      | 10.6M/26.4M [00:01<00:00, 16.3MB/s]
+23.6s	20	
+ 40%|████      | 10.6M/26.4M [00:01<00:00, 16.3MB/s]
+ 49%|████▉     | 13.0M/26.4M [00:01<00:00, 18.2MB/s]
+23.7s	21	
+ 49%|████▉     | 13.0M/26.4M [00:01<00:00, 18.2MB/s]
+ 63%|██████▎   | 16.8M/26.4M [00:01<00:00, 22.6MB/s]
+23.9s	22	
+ 63%|██████▎   | 16.8M/26.4M [00:01<00:00, 22.6MB/s]
+ 72%|███████▏  | 19.0M/26.4M [00:01<00:00, 17.2MB/s]
+24.0s	23	
+ 72%|███████▏  | 19.0M/26.4M [00:01<00:00, 17.2MB/s]
+ 79%|███████▉  | 21.0M/26.4M [00:01<00:00, 17.5MB/s]
+24.1s	24	
+ 79%|███████▉  | 21.0M/26.4M [00:01<00:00, 17.5MB/s]
+ 86%|████████▋ | 22.8M/26.4M [00:01<00:00, 17.3MB/s]
+24.2s	25	
+ 86%|████████▋ | 22.8M/26.4M [00:01<00:00, 17.3MB/s]
+ 93%|█████████▎| 24.7M/26.4M [00:01<00:00, 17.3MB/s]
+24.2s	26	
+ 93%|█████████▎| 24.7M/26.4M [00:01<00:00, 17.3MB/s]
+100%|██████████| 26.4M/26.4M [00:01<00:00, 13.5MB/s]
+24.3s	27	
+100%|██████████| 26.4M/26.4M [00:01<00:00, 13.5MB/s]
+24.3s	28	
+24.3s	29	
+25.1s	30	
+  0%|          | 0.00/29.5k [00:00<?, ?B/s]
+25.3s	31	
+  0%|          | 0.00/29.5k [00:00<?, ?B/s]
+100%|██████████| 29.5k/29.5k [00:00<00:00, 275kB/s]
+25.3s	32	
+100%|██████████| 29.5k/29.5k [00:00<00:00, 275kB/s]
+100%|██████████| 29.5k/29.5k [00:00<00:00, 273kB/s]
+25.3s	33	
+100%|██████████| 29.5k/29.5k [00:00<00:00, 273kB/s]
+25.3s	34	
+25.3s	35	
+25.8s	36	
+  0%|          | 0.00/4.42M [00:00<?, ?B/s]
+25.9s	37	
+  0%|          | 0.00/4.42M [00:00<?, ?B/s]
+  1%|          | 32.8k/4.42M [00:00<00:14, 304kB/s]
+26.0s	38	
+  1%|          | 32.8k/4.42M [00:00<00:14, 304kB/s]
+  1%|▏         | 65.5k/4.42M [00:00<00:14, 302kB/s]
+26.1s	39	
+  1%|▏         | 65.5k/4.42M [00:00<00:14, 302kB/s]
+  3%|▎         | 131k/4.42M [00:00<00:09, 438kB/s] 
+26.2s	40	
+  3%|▎         | 131k/4.42M [00:00<00:09, 438kB/s] 
+  5%|▌         | 229k/4.42M [00:00<00:06, 621kB/s]
+26.3s	41	
+  5%|▌         | 229k/4.42M [00:00<00:06, 621kB/s]
+ 10%|█         | 459k/4.42M [00:00<00:03, 1.16MB/s]
+26.4s	42	
+ 10%|█         | 459k/4.42M [00:00<00:03, 1.16MB/s]
+ 21%|██        | 918k/4.42M [00:00<00:01, 2.19MB/s]
+26.5s	43	
+ 21%|██        | 918k/4.42M [00:00<00:01, 2.19MB/s]
+ 41%|████▏     | 1.84M/4.42M [00:00<00:00, 4.22MB/s]
+26.7s	44	
+ 41%|████▏     | 1.84M/4.42M [00:00<00:00, 4.22MB/s]
+ 82%|████████▏ | 3.64M/4.42M [00:00<00:00, 6.17MB/s]
+26.7s	45	
+ 82%|████████▏ | 3.64M/4.42M [00:00<00:00, 6.17MB/s]
+100%|██████████| 4.42M/4.42M [00:00<00:00, 4.50MB/s]
+26.9s	46	
+100%|██████████| 4.42M/4.42M [00:00<00:00, 4.50MB/s]
+26.9s	47	
+26.9s	48	
+27.3s	49	
+  0%|          | 0.00/5.15k [00:00<?, ?B/s]
+27.3s	50	
+  0%|          | 0.00/5.15k [00:00<?, ?B/s]
+100%|██████████| 5.15k/5.15k [00:00<00:00, 13.0MB/s]
+27.4s	51	
+100%|██████████| 5.15k/5.15k [00:00<00:00, 13.0MB/s]
+27.4s	52	
+27.4s	53	
+11.2s	54	Collecting thop
+11.2s	55	  Downloading thop-0.1.1.post2209072238-py3-none-any.whl.metadata (2.7 kB)
+11.2s	56	Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from thop) (2.8.0+cu126)
+11.3s	57	Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.20.3)
+11.3s	58	Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (4.15.0)
+11.3s	59	Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch->thop) (75.2.0)
+11.3s	60	Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (1.13.3)
+11.3s	61	Requirement already satisfied: networkx in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.5)
+11.3s	62	Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.1.6)
+11.3s	63	Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from torch->thop) (2025.10.0)
+11.3s	64	Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.77)
+11.3s	65	Requirement already satisfied: nvidia-cuda-runtime-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.77)
+11.3s	66	Requirement already satisfied: nvidia-cuda-cupti-cu12==12.6.80 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.80)
+11.3s	67	Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (9.10.2.21)
+11.3s	68	Requirement already satisfied: nvidia-cublas-cu12==12.6.4.1 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.4.1)
+11.3s	69	Requirement already satisfied: nvidia-cufft-cu12==11.3.0.4 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (11.3.0.4)
+11.3s	70	Requirement already satisfied: nvidia-curand-cu12==10.3.7.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (10.3.7.77)
+11.3s	71	Requirement already satisfied: nvidia-cusolver-cu12==11.7.1.2 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (11.7.1.2)
+11.3s	72	Requirement already satisfied: nvidia-cusparse-cu12==12.5.4.2 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.5.4.2)
+11.3s	73	Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (0.7.1)
+11.3s	74	Requirement already satisfied: nvidia-nccl-cu12==2.27.3 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (2.27.3)
+11.3s	75	Requirement already satisfied: nvidia-nvtx-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.77)
+11.3s	76	Requirement already satisfied: nvidia-nvjitlink-cu12==12.6.85 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.85)
+11.3s	77	Requirement already satisfied: nvidia-cufile-cu12==1.11.1.6 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (1.11.1.6)
+11.3s	78	Requirement already satisfied: triton==3.4.0 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.4.0)
+11.3s	79	Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch->thop) (1.3.0)
+11.3s	80	Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch->thop) (3.0.3)
+11.3s	81	Downloading thop-0.1.1.post2209072238-py3-none-any.whl (15 kB)
+13.2s	82	Installing collected packages: thop
+13.2s	83	Successfully installed thop-0.1.1.post2209072238
+27.7s	84	
+27.7s	85	==============================================================================================================
+27.7s	86	DEVICE: CPU
+27.7s	87	==============================================================================================================
+27.7s	88	
+27.7s	89	----------------------------------------------------------------------------------------------------
+27.7s	90	Model: resnet18 | Optimizer: SGD
+27.7s	91	----------------------------------------------------------------------------------------------------
+28.0s	92	FLOPs: 1.824 GFLOPs
+3297.8s	93	Epoch [1/1] | Train Acc: 77.68% | Val Acc: 86.95%
+3544.0s	94	Final Test Accuracy: 86.56%
+3544.0s	95	Total Training Time: 3269880.52 ms
+3544.0s	96	
+3544.0s	97	----------------------------------------------------------------------------------------------------
+3544.0s	98	Model: resnet18 | Optimizer: Adam
+3544.0s	99	----------------------------------------------------------------------------------------------------
+3544.0s	100	FLOPs: 1.824 GFLOPs
+6635.1s	101	Epoch [1/1] | Train Acc: 82.68% | Val Acc: 85.53%
+6847.5s	102	Final Test Accuracy: 85.46%
+6847.5s	103	Total Training Time: 3090956.71 ms
+6847.5s	104	
+6847.5s	105	----------------------------------------------------------------------------------------------------
+6847.5s	106	Model: resnet50 | Optimizer: SGD
+6847.5s	107	----------------------------------------------------------------------------------------------------
+6847.9s	108	FLOPs: 4.132 GFLOPs
+17208.1s	109	Epoch [1/1] | Train Acc: 68.92% | Val Acc: 77.45%
+17766.9s	110	Final Test Accuracy: 76.81%
+17766.9s	111	Total Training Time: 10360176.85 ms
+17766.9s	112	
+17766.9s	113	----------------------------------------------------------------------------------------------------
+17766.9s	114	Model: resnet50 | Optimizer: Adam
+17766.9s	115	----------------------------------------------------------------------------------------------------
+17767.3s	116	FLOPs: 4.132 GFLOPs
+7.6s	117	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.6s	118	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.6s	119	0.00s - to python to disable frozen modules.
+7.6s	120	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.2s	121	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.2s	122	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.2s	123	0.00s - to python to disable frozen modules.
+8.2s	124	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+22.3s	125	
+  0%|          | 0.00/26.4M [00:00<?, ?B/s]
+22.4s	126	
+  0%|          | 0.00/26.4M [00:00<?, ?B/s]
+  0%|          | 32.8k/26.4M [00:00<01:23, 315kB/s]
+22.5s	127	
+  0%|          | 32.8k/26.4M [00:00<01:23, 315kB/s]
+  0%|          | 65.5k/26.4M [00:00<01:25, 308kB/s]
+22.6s	128	
+  0%|          | 65.5k/26.4M [00:00<01:25, 308kB/s]
+  0%|          | 131k/26.4M [00:00<00:58, 446kB/s] 
+22.7s	129	
+  0%|          | 131k/26.4M [00:00<00:58, 446kB/s] 
+  1%|          | 197k/26.4M [00:00<00:51, 510kB/s]
+22.8s	130	
+  1%|          | 197k/26.4M [00:00<00:51, 510kB/s]
+  2%|▏         | 426k/26.4M [00:00<00:23, 1.10MB/s]
+22.9s	131	
+  2%|▏         | 426k/26.4M [00:00<00:23, 1.10MB/s]
+  3%|▎         | 852k/26.4M [00:00<00:12, 2.07MB/s]
+23.0s	132	
+  3%|▎         | 852k/26.4M [00:00<00:12, 2.07MB/s]
+  6%|▌         | 1.61M/26.4M [00:00<00:06, 3.68MB/s]
+23.1s	133	
+  6%|▌         | 1.61M/26.4M [00:00<00:06, 3.68MB/s]
+ 12%|█▏        | 3.21M/26.4M [00:00<00:03, 7.26MB/s]
+23.3s	134	
+ 12%|█▏        | 3.21M/26.4M [00:00<00:03, 7.26MB/s]
+ 24%|██▍       | 6.42M/26.4M [00:00<00:01, 14.3MB/s]
+23.4s	135	
+ 24%|██▍       | 6.42M/26.4M [00:00<00:01, 14.3MB/s]
+ 34%|███▍      | 8.95M/26.4M [00:01<00:01, 16.7MB/s]
+23.5s	136	
+ 34%|███▍      | 8.95M/26.4M [00:01<00:01, 16.7MB/s]
+ 40%|████      | 10.6M/26.4M [00:01<00:00, 16.3MB/s]
+23.6s	137	
+ 40%|████      | 10.6M/26.4M [00:01<00:00, 16.3MB/s]
+ 49%|████▉     | 13.0M/26.4M [00:01<00:00, 18.2MB/s]
+23.7s	138	
+ 49%|████▉     | 13.0M/26.4M [00:01<00:00, 18.2MB/s]
+ 63%|██████▎   | 16.8M/26.4M [00:01<00:00, 22.6MB/s]
+23.9s	139	
+ 63%|██████▎   | 16.8M/26.4M [00:01<00:00, 22.6MB/s]
+ 72%|███████▏  | 19.0M/26.4M [00:01<00:00, 17.2MB/s]
+24.0s	140	
+ 72%|███████▏  | 19.0M/26.4M [00:01<00:00, 17.2MB/s]
+ 79%|███████▉  | 21.0M/26.4M [00:01<00:00, 17.5MB/s]
+24.1s	141	
+ 79%|███████▉  | 21.0M/26.4M [00:01<00:00, 17.5MB/s]
+ 86%|████████▋ | 22.8M/26.4M [00:01<00:00, 17.3MB/s]
+24.2s	142	
+ 86%|████████▋ | 22.8M/26.4M [00:01<00:00, 17.3MB/s]
+ 93%|█████████▎| 24.7M/26.4M [00:01<00:00, 17.3MB/s]
+24.2s	143	
+ 93%|█████████▎| 24.7M/26.4M [00:01<00:00, 17.3MB/s]
+100%|██████████| 26.4M/26.4M [00:01<00:00, 13.5MB/s]
+24.3s	144	
+100%|██████████| 26.4M/26.4M [00:01<00:00, 13.5MB/s]
+24.3s	145	
+24.3s	146	
+25.1s	147	
+  0%|          | 0.00/29.5k [00:00<?, ?B/s]
+25.3s	148	
+  0%|          | 0.00/29.5k [00:00<?, ?B/s]
+100%|██████████| 29.5k/29.5k [00:00<00:00, 275kB/s]
+25.3s	149	
+100%|██████████| 29.5k/29.5k [00:00<00:00, 275kB/s]
+100%|██████████| 29.5k/29.5k [00:00<00:00, 273kB/s]
+25.3s	150	
+100%|██████████| 29.5k/29.5k [00:00<00:00, 273kB/s]
+25.3s	151	
+25.3s	152	
+25.8s	153	
+  0%|          | 0.00/4.42M [00:00<?, ?B/s]
+25.9s	154	
+  0%|          | 0.00/4.42M [00:00<?, ?B/s]
+  1%|          | 32.8k/4.42M [00:00<00:14, 304kB/s]
+26.0s	155	
+  1%|          | 32.8k/4.42M [00:00<00:14, 304kB/s]
+  1%|▏         | 65.5k/4.42M [00:00<00:14, 302kB/s]
+26.1s	156	
+  1%|▏         | 65.5k/4.42M [00:00<00:14, 302kB/s]
+  3%|▎         | 131k/4.42M [00:00<00:09, 438kB/s] 
+26.2s	157	
+  3%|▎         | 131k/4.42M [00:00<00:09, 438kB/s] 
+  5%|▌         | 229k/4.42M [00:00<00:06, 621kB/s]
+26.3s	158	
+  5%|▌         | 229k/4.42M [00:00<00:06, 621kB/s]
+ 10%|█         | 459k/4.42M [00:00<00:03, 1.16MB/s]
+26.4s	159	
+ 10%|█         | 459k/4.42M [00:00<00:03, 1.16MB/s]
+ 21%|██        | 918k/4.42M [00:00<00:01, 2.19MB/s]
+26.5s	160	
+ 21%|██        | 918k/4.42M [00:00<00:01, 2.19MB/s]
+ 41%|████▏     | 1.84M/4.42M [00:00<00:00, 4.22MB/s]
+26.7s	161	
+ 41%|████▏     | 1.84M/4.42M [00:00<00:00, 4.22MB/s]
+ 82%|████████▏ | 3.64M/4.42M [00:00<00:00, 6.17MB/s]
+26.7s	162	
+ 82%|████████▏ | 3.64M/4.42M [00:00<00:00, 6.17MB/s]
+100%|██████████| 4.42M/4.42M [00:00<00:00, 4.50MB/s]
+26.9s	163	
+100%|██████████| 4.42M/4.42M [00:00<00:00, 4.50MB/s]
+26.9s	164	
+26.9s	165	
+27.3s	166	
+  0%|          | 0.00/5.15k [00:00<?, ?B/s]
+27.3s	167	
+  0%|          | 0.00/5.15k [00:00<?, ?B/s]
+100%|██████████| 5.15k/5.15k [00:00<00:00, 13.0MB/s]
+27.4s	168	
+100%|██████████| 5.15k/5.15k [00:00<00:00, 13.0MB/s]
+27.4s	169	
+27.4s	170	
+11.2s	171	Collecting thop
+11.2s	172	  Downloading thop-0.1.1.post2209072238-py3-none-any.whl.metadata (2.7 kB)
+11.2s	173	Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from thop) (2.8.0+cu126)
+11.3s	174	Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.20.3)
+11.3s	175	Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (4.15.0)
+11.3s	176	Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch->thop) (75.2.0)
+11.3s	177	Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (1.13.3)
+11.3s	178	Requirement already satisfied: networkx in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.5)
+11.3s	179	Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.1.6)
+11.3s	180	Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from torch->thop) (2025.10.0)
+11.3s	181	Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.77)
+11.3s	182	Requirement already satisfied: nvidia-cuda-runtime-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.77)
+11.3s	183	Requirement already satisfied: nvidia-cuda-cupti-cu12==12.6.80 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.80)
+11.3s	184	Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (9.10.2.21)
+11.3s	185	Requirement already satisfied: nvidia-cublas-cu12==12.6.4.1 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.4.1)
+11.3s	186	Requirement already satisfied: nvidia-cufft-cu12==11.3.0.4 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (11.3.0.4)
+11.3s	187	Requirement already satisfied: nvidia-curand-cu12==10.3.7.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (10.3.7.77)
+11.3s	188	Requirement already satisfied: nvidia-cusolver-cu12==11.7.1.2 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (11.7.1.2)
+11.3s	189	Requirement already satisfied: nvidia-cusparse-cu12==12.5.4.2 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.5.4.2)
+11.3s	190	Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (0.7.1)
+11.3s	191	Requirement already satisfied: nvidia-nccl-cu12==2.27.3 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (2.27.3)
+11.3s	192	Requirement already satisfied: nvidia-nvtx-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.77)
+11.3s	193	Requirement already satisfied: nvidia-nvjitlink-cu12==12.6.85 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (12.6.85)
+11.3s	194	Requirement already satisfied: nvidia-cufile-cu12==1.11.1.6 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (1.11.1.6)
+11.3s	195	Requirement already satisfied: triton==3.4.0 in /usr/local/lib/python3.12/dist-packages (from torch->thop) (3.4.0)
+11.3s	196	Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch->thop) (1.3.0)
+11.3s	197	Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch->thop) (3.0.3)
+11.3s	198	Downloading thop-0.1.1.post2209072238-py3-none-any.whl (15 kB)
+13.2s	199	Installing collected packages: thop
+13.2s	200	Successfully installed thop-0.1.1.post2209072238
+27.7s	201	
+27.7s	202	==============================================================================================================
+27.7s	203	DEVICE: CPU
+27.7s	204	==============================================================================================================
+27.7s	205	
+27.7s	206	----------------------------------------------------------------------------------------------------
+27.7s	207	Model: resnet18 | Optimizer: SGD
+27.7s	208	----------------------------------------------------------------------------------------------------
+28.0s	209	FLOPs: 1.824 GFLOPs
+3297.8s	210	Epoch [1/1] | Train Acc: 77.68% | Val Acc: 86.95%
+3544.0s	211	Final Test Accuracy: 86.56%
+3544.0s	212	Total Training Time: 3269880.52 ms
+3544.0s	213	
+3544.0s	214	----------------------------------------------------------------------------------------------------
+3544.0s	215	Model: resnet18 | Optimizer: Adam
+3544.0s	216	----------------------------------------------------------------------------------------------------
+3544.0s	217	FLOPs: 1.824 GFLOPs
+6635.1s	218	Epoch [1/1] | Train Acc: 82.68% | Val Acc: 85.53%
+6847.5s	219	Final Test Accuracy: 85.46%
+6847.5s	220	Total Training Time: 3090956.71 ms
+6847.5s	221	
+6847.5s	222	----------------------------------------------------------------------------------------------------
+6847.5s	223	Model: resnet50 | Optimizer: SGD
+6847.5s	224	----------------------------------------------------------------------------------------------------
+6847.9s	225	FLOPs: 4.132 GFLOPs
+17208.1s	226	Epoch [1/1] | Train Acc: 68.92% | Val Acc: 77.45%
+17766.9s	227	Final Test Accuracy: 76.81%
+17766.9s	228	Total Training Time: 10360176.85 ms
+17766.9s	229	
+17766.9s	230	----------------------------------------------------------------------------------------------------
+17766.9s	231	Model: resnet50 | Optimizer: Adam
+17766.9s	232	----------------------------------------------------------------------------------------------------
+17767.3s	233	FLOPs: 4.132 GFLOPs
+28301.7s	234	Epoch [1/1] | Train Acc: 77.65% | Val Acc: 82.25%
+28862.2s	235	Final Test Accuracy: 81.40%
+28862.2s	236	Total Training Time: 10534333.43 ms
+28862.2s	237	
+28862.2s	238	==============================================================================================================
+28862.2s	239	DEVICE: CUDA
+28862.2s	240	==============================================================================================================
+28862.2s	241	
+28862.2s	242	----------------------------------------------------------------------------------------------------
+28862.2s	243	Model: resnet18 | Optimizer: SGD
+28862.2s	244	----------------------------------------------------------------------------------------------------
+28863.0s	245	FLOPs: 1.824 GFLOPs
+28984.4s	246	Epoch [1/1] | Train Acc: 77.12% | Val Acc: 83.93%
+29004.4s	247	Final Test Accuracy: 83.38%
+29004.4s	248	Total Training Time: 121377.28 ms
+29004.4s	249	
+29004.4s	250	----------------------------------------------------------------------------------------------------
+29004.4s	251	Model: resnet18 | Optimizer: Adam
+29004.4s	252	----------------------------------------------------------------------------------------------------
+29004.4s	253	FLOPs: 1.824 GFLOPs
+29132.0s	254	Epoch [1/1] | Train Acc: 82.33% | Val Acc: 85.25%
