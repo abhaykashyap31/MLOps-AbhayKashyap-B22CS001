@@ -1,60 +1,89 @@
+:root {
+    --bg: #0f172a;
+    --card: #ffffff;
+    --accent: #2563eb;
+    --text-dark: #1f2937;
+    --text-light: #e5e7eb;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f6f8;
-    color: #333;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: var(--text-dark);
 }
 
 header {
-    background-color: #1f2937;
-    color: white;
-    padding: 20px;
     text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
 }
 
 header h1 {
-    margin: 0;
+    margin-bottom: 8px;
+    font-size: 2.2rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.85;
 }
 
 section {
-    background-color: white;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background: var(--card);
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 25px 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-.info p {
-    margin: 6px 0;
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    text-align: center;
+    font-size: 0.95rem;
 }
 
 h2 {
-    color: #1f2937;
+    color: var(--accent);
+    margin-bottom: 12px;
 }
 
 ul {
     padding-left: 20px;
 }
 
-a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: bold;
+li {
+    margin: 8px 0;
 }
 
-a:hover {
-    text-decoration: underline;
+.links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    background: var(--accent);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.4);
 }
 
 footer {
     text-align: center;
-    padding: 15px;
-    background-color: #e5e7eb;
-    margin-top: 30px;
-    font-size: 14px;
-}
-footer p {
-    margin: 0;
+    color: var(--text-light);
+    padding: 25px 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }

@@ -8,56 +8,103 @@
 <body>
 
     <header>
-        <h1>CSL7120 – DL Ops Assignment 1</h1>
-        <p>Image Classification using Deep Learning Models</p>
+        <h1>CSL7120 – Deep Learning Operations</h1>
+        <p>Assignment 1: Image Classification & Performance Analysis</p>
     </header>
 
-    <section class="info">
-        <p><strong>Name:</strong> Abhay Kashyap</p>
-        <p><strong>Roll No:</strong> B22CS001</p>
-        <p><strong>Course:</strong> CSL7120 – Deep Learning Operations</p>
+    <section class="info-grid">
+        <div><strong>Name:</strong> Abhay Kashyap</div>
+        <div><strong>Roll No:</strong> B22CS001</div>
+        <div><strong>Course:</strong> CSL7120</div>
+        <div><strong>Institution:</strong> IIT Jodhpur (DL Ops)</div>
     </section>
 
     <section>
-        <h2>Assignment Overview</h2>
+        <h2>📌 Assignment Objective</h2>
         <p>
-            This assignment focuses on image classification using MNIST and FashionMNIST datasets.
-            Deep learning models such as ResNet18 and ResNet50 were trained with different
-            hyperparameter configurations including batch size, learning rate, optimizer,
-            epochs, and pin_memory settings.
+            The goal of this assignment is to perform a comprehensive experimental study on
+            image classification using deep learning and classical machine learning models.
+            The experiments focus on understanding the impact of different hyperparameters,
+            optimizers, compute devices, and architectures on model accuracy, training time,
+            and computational cost.
         </p>
     </section>
 
     <section>
-        <h2>Models Used</h2>
+        <h2>📊 Datasets Used</h2>
+        <ul>
+            <li><strong>MNIST</strong> – Handwritten digit classification</li>
+            <li><strong>FashionMNIST</strong> – Clothing image classification</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🧠 Models Implemented</h2>
         <ul>
             <li>ResNet18</li>
             <li>ResNet50</li>
-            <li>SVM (RBF and Polynomial Kernels)</li>
+            <li>Support Vector Machine (SVM)</li>
         </ul>
     </section>
 
     <section>
-        <h2>Key Experiments</h2>
+        <h2>⚙️ Hyperparameters Explored</h2>
         <ul>
-            <li>Effect of batch size and learning rate</li>
-            <li>Comparison between SGD and Adam optimizers</li>
-            <li>Impact of pin_memory on performance</li>
-            <li>CPU vs GPU training comparison</li>
+            <li>Batch Size: 16, 32</li>
+            <li>Learning Rates: 0.001, 0.0001</li>
+            <li>Optimizers: SGD, Adam</li>
+            <li>Epochs: 1, 2</li>
+            <li>Pin Memory: True, False</li>
+            <li>Device: CPU vs GPU</li>
         </ul>
     </section>
 
     <section>
-        <h2>GitHub Repository</h2>
+        <h2>📈 Key Experimental Findings</h2>
+        <ul>
+            <li>Adam optimizer generally converged faster and achieved higher accuracy.</li>
+            <li>Lower learning rates performed better for deeper models like ResNet50.</li>
+            <li>Pin memory improved training performance when using GPU.</li>
+            <li>GPU significantly reduced training time compared to CPU.</li>
+            <li>RBF kernel outperformed polynomial kernels in SVM experiments.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🏆 Best Performing Configurations</h2>
         <p>
-            <a href="https://github.com/abhaykashyap31/MLOps-AbhayKashyap-B22CS001" target="_blank">
-                View Assignment Repository
-            </a>
+            The best performance on MNIST and FashionMNIST datasets was achieved using
+            Adam optimizer with a learning rate of 0.0001 and batch size of 16.
+            Detailed numerical results, accuracy tables, and training time comparisons
+            are provided in the full report.
         </p>
     </section>
 
+    <section>
+        <h2>📄 Full Report & Notebooks</h2>
+        <p>
+            Due to the extensive nature of experiments and result tables, the complete
+            analysis is documented in the official assignment report.
+        </p>
+
+        <div class="links">
+            <a href="B22CS001_Abhay_Kashyap_Ass1.pdf" target="_blank">📘 View Full PDF Report</a>
+            <a href="https://github.com/abhaykashyap31/MLOps-AbhayKashyap-B22CS001" target="_blank">💻 GitHub Repository</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔗 Implementation Details</h2>
+        <ul>
+            <li>Frameworks: PyTorch, TorchVision, Scikit-learn</li>
+            <li>Evaluation Metrics: Test Accuracy, Training Time, FLOPs</li>
+            <li>Version Control: Git & GitHub</li>
+            <li>Experiments conducted using both CPU and GPU environments</li>
+        </ul>
+    </section>
+
     <footer>
-        <p>© 2026 Abhay Kashyap | DL Ops Assignment</p>
+        <p>© 2026 Abhay Kashyap | CSL7120 – DL Ops Assignment 1</p>
     </footer>
 
 </body>
