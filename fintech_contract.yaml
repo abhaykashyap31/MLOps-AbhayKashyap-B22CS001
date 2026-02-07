@@ -1,0 +1,45 @@
+dataContractSpecification: 0.9.3
+id: urn:datacontract:fintech:transactions
+version: 1.0.0
+
+info:
+  title: "Financial Transactions Log"
+  description: "Transaction events consumed by fraud detection systems"
+  owner: "Banking Data Platform"
+  classification: restricted
+  tags: [finance, fraud, compliance]
+
+schema:
+  type: object
+  properties:
+
+    account_source_id:
+      type: string
+      description: "Source account identifier"
+      physical_mapping: acct_src
+
+    account_destination_id:
+      type: string
+      description: "Destination account identifier"
+      physical_mapping: acct_dest
+
+    transaction_timestamp:
+      type: string
+      format: date-time
+      description: "Timestamp of the transaction"
+      physical_mapping: tx_ts
+
+  required:
+    - account_source_id
+    - account_destination_id
+    - transaction_timestamp
+
+quality:
+  - name: account_id_format_check
+    type: validity
+    expression: "REGEXP_LIKE(account_source_id, '^[A-Z0-9]{10}$')"
+    threshold: "100%"
+    enforcement: hard
+    description: |
+      HARD CIRCUIT BREAKER:
+      Any invalid account ID must block the pipeline to prevent fraud model failure.
