@@ -1,6 +1,6 @@
 # Data Contracts & YAML Validation
 
-**Course:** Data Engineering Systems
+**Course:** CSL7120: DLOps
 **Topic:** Data Quality, Governance, and Contract Authoring
 
 ---
