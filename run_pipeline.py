@@ -13,7 +13,7 @@ from data import (
     build_datasets,
 )
 from train import train_baseline, predict_baseline, train_bert
-from eval import (
+from evaluation import (
     evaluate_trainer,
     get_predictions,
     print_classification_report,

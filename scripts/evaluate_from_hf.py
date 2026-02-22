@@ -16,7 +16,7 @@ from data import (
 from train.train_bert import build_trainer
 from transformers import DistilBertForSequenceClassification, TrainingArguments
 from utils.config import get_device
-from eval.save_results import run_evaluation_and_save
+from evaluation.save_results import run_evaluation_and_save
 
 
 def main():

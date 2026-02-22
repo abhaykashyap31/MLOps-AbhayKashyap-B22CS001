@@ -27,7 +27,7 @@ def main():
     from transformers import DistilBertForSequenceClassification, DistilBertTokenizerFast
     from transformers import TrainingArguments
     from utils.config import get_device
-    from eval.save_results import run_evaluation_and_save
+    from evaluation.save_results import run_evaluation_and_save
 
     cache_path = os.environ.get("CACHE_PATH", "genre_reviews_dict.pickle")
     genre_reviews_dict = load_or_download_genre_reviews(

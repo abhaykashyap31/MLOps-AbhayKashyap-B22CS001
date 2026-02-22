@@ -4,7 +4,7 @@ from pathlib import Path
 
 def run_evaluation_and_save(trainer, test_dataset, id2label, test_labels, output_path):
     from sklearn.metrics import f1_score, precision_recall_fscore_support
-    from eval.evaluate import get_predictions
+    from evaluation.evaluate import get_predictions
 
     metrics = trainer.evaluate(eval_dataset=test_dataset)
     predicted_labels = get_predictions(trainer, test_dataset, id2label)
