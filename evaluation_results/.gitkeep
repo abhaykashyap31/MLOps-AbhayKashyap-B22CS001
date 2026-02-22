@@ -1,0 +1,3 @@
+# Keep this directory in git. evaluation_results.json, evaluation_results_hf.json,
+# and evaluation_comparison.json are written here by run_pipeline.py and
+# scripts/evaluate_from_hf.py.

@@ -1,0 +1,22 @@
+FROM python:3.11-slim-bookworm
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir torch transformers scikit-learn pandas requests gdown
+
+COPY . .
+COPY scripts/run_eval_only.py /app/scripts/
+
+ENV EVAL_OUTPUT_DIR=/results
+VOLUME /results
+
+CMD ["python", "scripts/run_eval_only.py"]

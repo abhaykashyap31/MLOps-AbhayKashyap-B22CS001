@@ -1,0 +1,12 @@
+# Ignore files not needed inside the image to keep build context small
+.git
+.gitignore
+__pycache__
+*.pyc
+.pytest_cache
+.venv
+venv
+*.egg-info
+.DS_Store
+*.md
+!requirements.txt

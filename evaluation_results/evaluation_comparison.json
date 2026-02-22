@@ -1,0 +1,6 @@
+{
+    "local_accuracy": 0.590625,
+    "local_f1_macro": 0.5938045853555912,
+    "hf_accuracy": 0.590625,
+    "hf_f1_macro": 0.5938045853555912
+}
