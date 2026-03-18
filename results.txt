@@ -1,0 +1,454 @@
+================= Baseline results =====================================
+
+English Sentence Length Stats:
+count    13186.000000
+mean         5.607614
+std          2.676713
+min          1.000000
+25%          4.000000
+50%          5.000000
+75%          7.000000
+max         53.000000
+Name: en_len, dtype: float64
+
+Hindi Sentence Length Stats:
+count    13186.000000
+mean         6.277719
+std          2.999823
+min          1.000000
+25%          4.000000
+50%          6.000000
+75%          8.000000
+max         57.000000
+Name: hi_len, dtype: float64
+
+
+
+Epoch [1/100]: 100%|██████████| 220/220 [01:06<00:00,  3.31it/s, loss=4.72]
+Checkpoint saved at epoch 1, loss 5.2639.
+Epoch [2/100]: 100%|██████████| 220/220 [01:08<00:00,  3.20it/s, loss=3.59]
+Checkpoint saved at epoch 2, loss 4.0719.
+Epoch [3/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=3.69]
+Checkpoint saved at epoch 3, loss 3.4818.
+Epoch [4/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=2.68]
+Checkpoint saved at epoch 4, loss 3.0312.
+Epoch [5/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=2.13]
+Checkpoint saved at epoch 5, loss 2.6548.
+Epoch [6/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=2.56]
+Checkpoint saved at epoch 6, loss 2.3184.
+Epoch [7/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=2.09]
+Checkpoint saved at epoch 7, loss 2.0219.
+Epoch [8/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=1.63]
+Checkpoint saved at epoch 8, loss 1.7591.
+Epoch [9/100]: 100%|██████████| 220/220 [01:11<00:00,  3.07it/s, loss=1.43]
+Checkpoint saved at epoch 9, loss 1.5243.
+Epoch [10/100]: 100%|██████████| 220/220 [01:11<00:00,  3.07it/s, loss=1.26]
+Checkpoint saved at epoch 10, loss 1.3054.
+Epoch [11/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=1.1]
+Checkpoint saved at epoch 11, loss 1.1206.
+Epoch [12/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.924]
+Checkpoint saved at epoch 12, loss 0.9510.
+Epoch [13/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.891]
+Checkpoint saved at epoch 13, loss 0.8072.
+Epoch [14/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.644]
+Checkpoint saved at epoch 14, loss 0.6879.
+Epoch [15/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.767]
+Checkpoint saved at epoch 15, loss 0.5839.
+Epoch [16/100]: 100%|██████████| 220/220 [01:11<00:00,  3.07it/s, loss=0.619]
+Checkpoint saved at epoch 16, loss 0.5021.
+Epoch [17/100]: 100%|██████████| 220/220 [01:11<00:00,  3.07it/s, loss=0.526]
+Checkpoint saved at epoch 17, loss 0.4249.
+Epoch [18/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.333]
+Checkpoint saved at epoch 18, loss 0.3744.
+Epoch [19/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.379]
+Checkpoint saved at epoch 19, loss 0.3294.
+Epoch [20/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.355]
+Checkpoint saved at epoch 20, loss 0.2995.
+Epoch [21/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.247]
+Checkpoint saved at epoch 21, loss 0.2718.
+Epoch [22/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.298]
+Checkpoint saved at epoch 22, loss 0.2456.
+Epoch [23/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.26]
+Checkpoint saved at epoch 23, loss 0.2333.
+Epoch [24/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.193]
+Checkpoint saved at epoch 24, loss 0.2189.
+Epoch [25/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.298]
+Checkpoint saved at epoch 25, loss 0.2094.
+Epoch [26/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.269]
+Checkpoint saved at epoch 26, loss 0.2024.
+Epoch [27/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.192]
+Checkpoint saved at epoch 27, loss 0.1943.
+Epoch [28/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.227]
+Checkpoint saved at epoch 28, loss 0.1907.
+Epoch [29/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.233]
+Checkpoint saved at epoch 29, loss 0.1866.
+Epoch [30/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.171]
+Checkpoint saved at epoch 30, loss 0.1805.
+Epoch [31/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.213]
+Checkpoint saved at epoch 31, loss 0.1760.
+Epoch [32/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.24]
+Checkpoint saved at epoch 32, loss 0.1734.
+Epoch [33/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.227]
+Checkpoint saved at epoch 33, loss 0.1690.
+Epoch [34/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.223]
+Checkpoint saved at epoch 34, loss 0.1665.
+Epoch [35/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.199]
+Checkpoint saved at epoch 35, loss 0.1632.
+Epoch [36/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.184]
+Checkpoint saved at epoch 36, loss 0.1586.
+Epoch [37/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.195]
+Checkpoint saved at epoch 37, loss 0.1561.
+Epoch [38/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.2]
+Checkpoint saved at epoch 38, loss 0.1563.
+Epoch [39/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.197]
+Checkpoint saved at epoch 39, loss 0.1524.
+Epoch [40/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.185]
+Checkpoint saved at epoch 40, loss 0.1493.
+Epoch [41/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.159]
+Checkpoint saved at epoch 41, loss 0.1493.
+Epoch [42/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.182]
+Checkpoint saved at epoch 42, loss 0.1459.
+Epoch [43/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.168]
+Checkpoint saved at epoch 43, loss 0.1436.
+Epoch [44/100]: 100%|██████████| 220/220 [01:10<00:00,  3.11it/s, loss=0.179]
+Checkpoint saved at epoch 44, loss 0.1467.
+Epoch [45/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.115]
+Checkpoint saved at epoch 45, loss 0.1419.
+Epoch [46/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.148]
+Checkpoint saved at epoch 46, loss 0.1402.
+Epoch [47/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.175]
+Checkpoint saved at epoch 47, loss 0.1378.
+Epoch [48/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.134]
+Checkpoint saved at epoch 48, loss 0.1374.
+Epoch [49/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.129]
+Checkpoint saved at epoch 49, loss 0.1377.
+Epoch [50/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.149]
+Checkpoint saved at epoch 50, loss 0.1357.
+Epoch [51/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.144]
+Checkpoint saved at epoch 51, loss 0.1310.
+Epoch [52/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.125]
+Checkpoint saved at epoch 52, loss 0.1297.
+Epoch [53/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.213]
+Checkpoint saved at epoch 53, loss 0.1321.
+Epoch [54/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.169]
+Checkpoint saved at epoch 54, loss 0.1318.
+Epoch [55/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.168]
+Checkpoint saved at epoch 55, loss 0.1282.
+Epoch [56/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.188]
+Checkpoint saved at epoch 56, loss 0.1281.
+Epoch [57/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.0946]
+Checkpoint saved at epoch 57, loss 0.1287.
+Epoch [58/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0963]
+Checkpoint saved at epoch 58, loss 0.1253.
+Epoch [59/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0978]
+Checkpoint saved at epoch 59, loss 0.1248.
+Epoch [60/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.13]
+Checkpoint saved at epoch 60, loss 0.1238.
+Epoch [61/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.124]
+Checkpoint saved at epoch 61, loss 0.1207.
+Epoch [62/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.137]
+Checkpoint saved at epoch 62, loss 0.1217.
+Epoch [63/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.156]
+Checkpoint saved at epoch 63, loss 0.1230.
+Epoch [64/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.129]
+Checkpoint saved at epoch 64, loss 0.1199.
+Epoch [65/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.137]
+Checkpoint saved at epoch 65, loss 0.1190.
+Epoch [66/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.123]
+Checkpoint saved at epoch 66, loss 0.1172.
+Epoch [67/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.123]
+Checkpoint saved at epoch 67, loss 0.1173.
+Epoch [68/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.126]
+Checkpoint saved at epoch 68, loss 0.1159.
+Epoch [69/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.173]
+Checkpoint saved at epoch 69, loss 0.1143.
+Epoch [70/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.123]
+Checkpoint saved at epoch 70, loss 0.1128.
+Epoch [71/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.131]
+Checkpoint saved at epoch 71, loss 0.1128.
+Epoch [72/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.163]
+Checkpoint saved at epoch 72, loss 0.1128.
+Epoch [73/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.15]
+Checkpoint saved at epoch 73, loss 0.1132.
+Epoch [74/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.128]
+Checkpoint saved at epoch 74, loss 0.1129.
+Epoch [75/100]: 100%|██████████| 220/220 [01:11<00:00,  3.08it/s, loss=0.146]
+Checkpoint saved at epoch 75, loss 0.1129.
+Epoch [76/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.12]
+Checkpoint saved at epoch 76, loss 0.1108.
+Epoch [77/100]: 100%|██████████| 220/220 [01:10<00:00,  3.11it/s, loss=0.123]
+Checkpoint saved at epoch 77, loss 0.1097.
+Epoch [78/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.195]
+Checkpoint saved at epoch 78, loss 0.1090.
+Epoch [79/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.116]
+Checkpoint saved at epoch 79, loss 0.1082.
+Epoch [80/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.157]
+Checkpoint saved at epoch 80, loss 0.1076.
+Epoch [81/100]: 100%|██████████| 220/220 [01:10<00:00,  3.11it/s, loss=0.171]
+Checkpoint saved at epoch 81, loss 0.1069.
+Epoch [82/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.131]
+Checkpoint saved at epoch 82, loss 0.1080.
+Epoch [83/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.112]
+Checkpoint saved at epoch 83, loss 0.1069.
+Epoch [84/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.096]
+Checkpoint saved at epoch 84, loss 0.1056.
+Epoch [85/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.07]
+Checkpoint saved at epoch 85, loss 0.1044.
+Epoch [86/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0955]
+Checkpoint saved at epoch 86, loss 0.1059.
+Epoch [87/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0802]
+Checkpoint saved at epoch 87, loss 0.1042.
+Epoch [88/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.151]
+Checkpoint saved at epoch 88, loss 0.1041.
+Epoch [89/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0983]
+Checkpoint saved at epoch 89, loss 0.1035.
+Epoch [90/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0944]
+Checkpoint saved at epoch 90, loss 0.1036.
+Epoch [91/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.0905]
+Checkpoint saved at epoch 91, loss 0.1021.
+Epoch [92/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.0977]
+Checkpoint saved at epoch 92, loss 0.1018.
+Epoch [93/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.131]
+Checkpoint saved at epoch 93, loss 0.1009.
+Epoch [94/100]: 100%|██████████| 220/220 [01:11<00:00,  3.10it/s, loss=0.102]
+Checkpoint saved at epoch 94, loss 0.1005.
+Epoch [95/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0971]
+Checkpoint saved at epoch 95, loss 0.1009.
+Epoch [96/100]: 100%|██████████| 220/220 [01:10<00:00,  3.10it/s, loss=0.154]
+Checkpoint saved at epoch 96, loss 0.1024.
+Epoch [97/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0948]
+Checkpoint saved at epoch 97, loss 0.1002.
+Epoch [98/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.13]
+Checkpoint saved at epoch 98, loss 0.1018.
+Epoch [99/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.115]
+Checkpoint saved at epoch 99, loss 0.0993.
+Epoch [100/100]: 100%|██████████| 220/220 [01:11<00:00,  3.09it/s, loss=0.0965]
+Checkpoint saved at epoch 100, loss 0.0973.
+
+🌐 BLEU Score (NLTK): 49.53
+0.4953364977799024, 
+
+================= Ray and Optuna Optimiza =====================================
+
+Trial status: 5 TERMINATED
+Current time: 2026-03-18 13:02:49. Total running time: 23min 36s
+Logical resource usage: 1.0/1 CPUs, 1.0/1 GPUs (0.0/1.0 accelerator_type:T4)
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name            status                lr     batch_size     num_heads     d_ff     dropout     iter     total time (s)      loss     epoch |
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+| train_tune_2ac5ebd1   TERMINATED   5.96869e-05             32             8     1024    0.373121        7           396.397    3.67058         7 |
+| train_tune_03ea0d7b   TERMINATED   0.000149556             16             4     1024    0.335692        7           472.628    2.49305         7 |
+| train_tune_af5ff1f0   TERMINATED   0.000110794             32             4     1024    0.182719        7           385.314    2.09566         7 |
+| train_tune_68ab2bba   TERMINATED   0.00037587              32             4     1024    0.185506        1            57.0875   5.53649         1 |
+| train_tune_26b82bf1   TERMINATED   0.000938233             32             8     1024    0.157823        1            58.028    6.03208         1 |
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Best trial:
+{'loss': 2.095656990139017, 'epoch': 7, 'timestamp': 1773838834, 'checkpoint_dir_name': None, 'done': True, 'training_iteration': 7, 'trial_id': 'af5ff1f0', 'date': '2026-03-18_13-00-34', 'time_this_iter_s': 54.64928317070007, 'time_total_s': 385.3137788772583, 'pid': 6292, 'hostname': 'b778d03b861d', 'node_ip': '172.28.0.12', 'config': {'max_epochs': 7, 'data_path': '/content/English-Hindi.tsv', 'freq_threshold': 2, 'max_len': 50, 'd_model': 512, 'lr': 0.00011079428623002888, 'batch_size': 32, 'num_heads': 4, 'd_ff': 1024, 'dropout': 0.18271930817849596}, 'time_since_restore': 385.3137788772583, 'iterations_since_restore': 7, 'experiment_tag': '3_batch_size=32,d_ff=1024,d_model=512,data_path=content_English-Hindi_tsv,dropout=0.1827,freq_threshold=2,lr=0.0001,max_epochs=7,max_len=50,num_heads=4'}
+{'max_epochs': 7, 'data_path': '/content/English-Hindi.tsv', 'freq_threshold': 2, 'max_len': 50, 'd_model': 512, 'lr': 0.00011079428623002888, 'batch_size': 32, 'num_heads': 4, 'd_ff': 1024, 'dropout': 0.18271930817849596}
+
+Starting training with tuned hyperparameters for 90 epochs...
+Using Device: cuda
+No checkpoint found at transformer_tuned_best.pt. Starting from scratch.
+Epoch [1/90]: 100%|██████████| 413/413 [00:53<00:00,  7.70it/s, loss=5.53]
+Checkpoint saved at epoch 1, loss 5.0963.
+Epoch [2/90]: 100%|██████████| 413/413 [00:56<00:00,  7.30it/s, loss=2.46]
+Checkpoint saved at epoch 2, loss 4.0304.
+Epoch [3/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=1.52]
+Checkpoint saved at epoch 3, loss 3.4804.
+Epoch [4/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.815]
+Checkpoint saved at epoch 4, loss 3.0524.
+Epoch [5/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=2.81]
+Checkpoint saved at epoch 5, loss 2.7081.
+Epoch [6/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=1.59]
+Checkpoint saved at epoch 6, loss 2.3984.
+Epoch [7/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=2.02]
+Checkpoint saved at epoch 7, loss 2.1211.
+Epoch [8/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=3.19]
+Checkpoint saved at epoch 8, loss 1.8712.
+Epoch [9/90]: 100%|██████████| 413/413 [01:01<00:00,  6.76it/s, loss=1.01]
+Checkpoint saved at epoch 9, loss 1.6516.
+Epoch [10/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=1.39]
+Checkpoint saved at epoch 10, loss 1.4541.
+Epoch [11/90]: 100%|██████████| 413/413 [00:55<00:00,  7.38it/s, loss=0.842]
+Checkpoint saved at epoch 11, loss 1.2796.
+Epoch [12/90]: 100%|██████████| 413/413 [00:56<00:00,  7.25it/s, loss=0.935]
+Checkpoint saved at epoch 12, loss 1.1253.
+Epoch [13/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.623]
+Checkpoint saved at epoch 13, loss 0.9942.
+Epoch [14/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.311]
+Checkpoint saved at epoch 14, loss 0.8698.
+Epoch [15/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.421]
+Checkpoint saved at epoch 15, loss 0.7580.
+Epoch [16/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.16]
+Checkpoint saved at epoch 16, loss 0.6715.
+Epoch [17/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.608]
+Checkpoint saved at epoch 17, loss 0.5910.
+Epoch [18/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.517]
+Checkpoint saved at epoch 18, loss 0.5373.
+Epoch [19/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.707]
+Checkpoint saved at epoch 19, loss 0.4844.
+Epoch [20/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.614]
+Checkpoint saved at epoch 20, loss 0.4489.
+Epoch [21/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.64]
+Checkpoint saved at epoch 21, loss 0.4061.
+Epoch [22/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.211]
+Checkpoint saved at epoch 22, loss 0.3784.
+Epoch [23/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.0936]
+Checkpoint saved at epoch 23, loss 0.3512.
+Epoch [24/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.258]
+Checkpoint saved at epoch 24, loss 0.3285.
+Epoch [25/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.158]
+Checkpoint saved at epoch 25, loss 0.3183.
+Epoch [26/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.285]
+Checkpoint saved at epoch 26, loss 0.3027.
+Epoch [27/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.322]
+Checkpoint saved at epoch 27, loss 0.2948.
+Epoch [28/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.149]
+Checkpoint saved at epoch 28, loss 0.2773.
+Epoch [29/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.146]
+Checkpoint saved at epoch 29, loss 0.2693.
+Epoch [30/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.698]
+Checkpoint saved at epoch 30, loss 0.2659.
+Epoch [31/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.363]
+Checkpoint saved at epoch 31, loss 0.2639.
+Epoch [32/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.306]
+Checkpoint saved at epoch 32, loss 0.2523.
+Epoch [33/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.373]
+Checkpoint saved at epoch 33, loss 0.2409.
+Epoch [34/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.155]
+Checkpoint saved at epoch 34, loss 0.2438.
+Epoch [35/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.0755]
+Checkpoint saved at epoch 35, loss 0.2337.
+Epoch [36/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=1]
+Checkpoint saved at epoch 36, loss 0.2307.
+Epoch [37/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.0329]
+Checkpoint saved at epoch 37, loss 0.2338.
+Epoch [38/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.046]
+Checkpoint saved at epoch 38, loss 0.2177.
+Epoch [39/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.227]
+Checkpoint saved at epoch 39, loss 0.2141.
+Epoch [40/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.333]
+Checkpoint saved at epoch 40, loss 0.2147.
+Epoch [41/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.179]
+Checkpoint saved at epoch 41, loss 0.2118.
+Epoch [42/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.843]
+Checkpoint saved at epoch 42, loss 0.2092.
+Epoch [43/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.0762]
+Checkpoint saved at epoch 43, loss 0.2062.
+Epoch [44/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.0355]
+Checkpoint saved at epoch 44, loss 0.2028.
+Epoch [45/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.0817]
+Checkpoint saved at epoch 45, loss 0.1997.
+Epoch [46/90]: 100%|██████████| 413/413 [00:55<00:00,  7.38it/s, loss=0.433]
+Checkpoint saved at epoch 46, loss 0.1989.
+Epoch [47/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.075]
+Checkpoint saved at epoch 47, loss 0.1956.
+Epoch [48/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.185]
+Checkpoint saved at epoch 48, loss 0.1895.
+Epoch [49/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.111]
+Checkpoint saved at epoch 49, loss 0.1932.
+Epoch [50/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.0742]
+Checkpoint saved at epoch 50, loss 0.1902.
+Epoch [51/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.13]
+Checkpoint saved at epoch 51, loss 0.1885.
+Epoch [52/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.701]
+Checkpoint saved at epoch 52, loss 0.1859.
+Epoch [53/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.735]
+Checkpoint saved at epoch 53, loss 0.1875.
+Epoch [54/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.074]
+Checkpoint saved at epoch 54, loss 0.1871.
+Epoch [55/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.182]
+Checkpoint saved at epoch 55, loss 0.1815.
+Epoch [56/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.173]
+Checkpoint saved at epoch 56, loss 0.1805.
+Epoch [57/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.0575]
+Checkpoint saved at epoch 57, loss 0.1760.
+Epoch [58/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.2]
+Checkpoint saved at epoch 58, loss 0.1756.
+Epoch [59/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.155]
+Checkpoint saved at epoch 59, loss 0.1782.
+Epoch [60/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.0256]
+Checkpoint saved at epoch 60, loss 0.1726.
+Epoch [61/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.183]
+Checkpoint saved at epoch 61, loss 0.1726.
+Epoch [62/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.0643]
+Checkpoint saved at epoch 62, loss 0.1677.
+Epoch [63/90]: 100%|██████████| 413/413 [00:56<00:00,  7.34it/s, loss=0.0632]
+Checkpoint saved at epoch 63, loss 0.1704.
+Epoch [64/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.443]
+Checkpoint saved at epoch 64, loss 0.1686.
+Epoch [65/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.268]
+Checkpoint saved at epoch 65, loss 0.1719.
+Epoch [66/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.256]
+Checkpoint saved at epoch 66, loss 0.1676.
+Epoch [67/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.0194]
+Checkpoint saved at epoch 67, loss 0.1649.
+Epoch [68/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.226]
+Checkpoint saved at epoch 68, loss 0.1645.
+Epoch [69/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.0393]
+Checkpoint saved at epoch 69, loss 0.1597.
+Epoch [70/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.253]
+Checkpoint saved at epoch 70, loss 0.1614.
+Epoch [71/90]: 100%|██████████| 413/413 [00:55<00:00,  7.43it/s, loss=0.00678]
+Checkpoint saved at epoch 71, loss 0.1653.
+Epoch [72/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.154]
+Checkpoint saved at epoch 72, loss 0.1593.
+Epoch [73/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.245]
+Checkpoint saved at epoch 73, loss 0.1554.
+Epoch [74/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.0465]
+Checkpoint saved at epoch 74, loss 0.1587.
+Epoch [75/90]: 100%|██████████| 413/413 [00:55<00:00,  7.42it/s, loss=0.121]
+Checkpoint saved at epoch 75, loss 0.1570.
+Epoch [76/90]: 100%|██████████| 413/413 [00:55<00:00,  7.41it/s, loss=0.0136]
+Checkpoint saved at epoch 76, loss 0.1558.
+Epoch [77/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.0185]
+Checkpoint saved at epoch 77, loss 0.1564.
+Epoch [78/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.0338]
+Checkpoint saved at epoch 78, loss 0.1524.
+Epoch [79/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.207]
+Checkpoint saved at epoch 79, loss 0.1545.
+Epoch [80/90]: 100%|██████████| 413/413 [00:55<00:00,  7.38it/s, loss=0.223]
+Checkpoint saved at epoch 80, loss 0.1531.
+Epoch [81/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.129]
+Checkpoint saved at epoch 81, loss 0.1544.
+Epoch [82/90]: 100%|██████████| 413/413 [00:55<00:00,  7.38it/s, loss=0.0327]
+Checkpoint saved at epoch 82, loss 0.1532.
+Epoch [83/90]: 100%|██████████| 413/413 [00:55<00:00,  7.38it/s, loss=0.097]
+Checkpoint saved at epoch 83, loss 0.1514.
+Epoch [84/90]: 100%|██████████| 413/413 [00:55<00:00,  7.38it/s, loss=0.0636]
+Checkpoint saved at epoch 84, loss 0.1517.
+Epoch [85/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.176]
+Checkpoint saved at epoch 85, loss 0.1487.
+Epoch [86/90]: 100%|██████████| 413/413 [00:55<00:00,  7.40it/s, loss=0.0253]
+Checkpoint saved at epoch 86, loss 0.1479.
+Epoch [87/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.435]
+Checkpoint saved at epoch 87, loss 0.1463.
+Epoch [88/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.2]
+Checkpoint saved at epoch 88, loss 0.1504.
+Epoch [89/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.582]
+Checkpoint saved at epoch 89, loss 0.1486.
+Epoch [90/90]: 100%|██████████| 413/413 [00:55<00:00,  7.39it/s, loss=0.151]
+Checkpoint saved at epoch 90, loss 0.1488.
+
+--- Evaluation on Example Sentences ---
+
+🗣 English: I love you.
+🇮🇳 Hindi: मैं तुमसे प्यार करता हूँ।
+
+🗣 English: What is your name?
+🇮🇳 Hindi: तुम्हारा नाम क्या है?
+
+🗣 English: How are you?
+🇮🇳 Hindi: तू कैसी है?
+
+🗣 English: The weather is nice today.
+🇮🇳 Hindi: आज मौसम अच्छा है।
+
+🗣 English: She is a good teacher.
+🇮🇳 Hindi: वह एक अच्छा शिक्षक है।
+
+--- BLEU Score Evaluation ---
+🌐 BLEU Score (NLTK): 75.66
+✅ Tuned Model and vocabs saved.

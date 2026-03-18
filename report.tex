@@ -1,0 +1,232 @@
+% Academic report (XeLaTeX/LuaLaTeX recommended for proper Hindi glyphs)
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{listings}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+\title{\textbf{Efficient Hyperparameter Optimization for an English-to-Hindi Transformer}\\
+via \textbf{Ray Tune} + \textbf{Optuna} with \textbf{ASHA}}
+\author{Abhay Kashyap (B22CS001)}
+\date{CSL7120: DLOps \quad | \quad Indian Institute of Technology Jodhpur}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report documents an end-to-end study of English-to-Hindi neural machine translation using a custom Transformer implemented in PyTorch. First, a strong baseline is established by training the model for 100 epochs and evaluating with NLTK's corpus-level BLEU. Next, the training loop is refactored to become compatible with Ray Tune, enabling scalable hyperparameter search. Ray Tune is configured to use Optuna as the underlying search algorithm, while the ASHA scheduler is employed to terminate underperforming trials early, thereby improving computational efficiency. Finally, the best-performing hyperparameters from the search are used to retrain the model and obtain the final tuned BLEU score.
+\end{abstract}
+
+\section{Introduction}
+Neural machine translation (NMT) benefits significantly from appropriate hyperparameter selection, as model quality and convergence behavior are highly sensitive to learning rate, batch size, attention configuration, and regularization. In this assignment, we optimize a Transformer-based sequence-to-sequence model for English-to-Hindi translation using:
+\begin{itemize}
+  \item \textbf{Ray Tune} for distributed and repeatable hyperparameter tuning,
+  \item \textbf{Optuna} as a Bayesian optimization method for smarter exploration,
+  \item \textbf{ASHA} (Asynchronous Successive Halving Algorithm) for early stopping.
+\end{itemize}
+The central objective is to achieve at least the baseline BLEU score while constraining each Ray Tune trial to a maximum number of epochs to reduce overall computation.
+
+\section{Dataset and Preprocessing}
+The dataset consists of English--Hindi sentence pairs stored in \texttt{English-Hindi.tsv}. Each row contains an English sentence and its corresponding Hindi translation.
+
+\subsection{Data cleaning}
+The dataset is loaded into a dataframe, the columns \texttt{en} and \texttt{hi} are retained, missing values are removed, and the index is reset.
+
+\subsection{Vocabulary construction}
+Token-level vocabularies are constructed for both languages using a simple frequency thresholding scheme. Tokens with frequency lower than the threshold are mapped to \texttt{<unk>}. Special tokens include:
+\texttt{<pad>}, \texttt{<sos>}, \texttt{<eos>}, and \texttt{<unk>}.
+
+\subsection{Sequence encoding}
+Each sentence is encoded into a fixed-length sequence with padding. The decoder input and target output sequences are created by shifting the Hindi token sequence:
+\begin{itemize}
+  \item decoder input: Hindi tokens excluding \texttt{<eos>}
+  \item decoder output: Hindi tokens excluding \texttt{<sos>}
+\end{itemize}
+
+\section{Transformer Model Architecture}
+The model is a custom Transformer encoder--decoder with the following configurable components:
+\begin{itemize}
+  \item Model dimension \texttt{d\_model}
+  \item Number of attention heads \texttt{num\_heads} (with the constraint that \texttt{d\_model} is divisible by \texttt{num\_heads})
+  \item Feed-forward dimension \texttt{d\_ff}
+  \item Number of encoder/decoder layers \texttt{num\_layers}
+  \item Dropout rate \texttt{dropout}
+\end{itemize}
+
+\subsection{Training objective}
+Training uses cross-entropy loss with the target padding index ignored:
+\[
+\mathcal{L} = \text{CE}(\text{logits}, \text{targets}), \quad \text{ignoring } \texttt{<pad>}.
+\]
+This loss serves as the optimization metric reported to Ray Tune and Optuna.
+
+\section{Baseline Experiment (Part 1)}
+The baseline experiment trains the Transformer \textbf{exactly as-is} (i.e., without changing the original architecture or hyperparameters) for 100 epochs and evaluates BLEU using NLTK's \texttt{corpus\_bleu} with smoothing.
+
+\subsection{Baseline performance}
+From the baseline logs in \texttt{results.txt}, the final training loss and BLEU are:
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{@{}l@{\hspace{12pt}}l@{}}
+    \toprule
+    \textbf{Metric} & \textbf{Value} \\
+    \midrule
+    Total wall-clock time for 100 epochs & $\approx$ 1 h 58 m \\
+    Final training loss (epoch 100) & 0.0973 \\
+    BLEU score (NLTK) & 49.53 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Baseline metrics and recorded training runtime estimate (from per-epoch progress timing).}
+\end{table}
+
+\subsection{Saved baseline artifact}
+The baseline notebook/script saves the final checkpoint as \texttt{transformer\_translation\_final.pth}, along with the vocabulary pickles \texttt{en\_vocab.pkl} and \texttt{hi\_vocab.pkl}, for later reuse in evaluation and tuned experiments.
+
+\subsection{Evaluation protocol}
+The BLEU score is computed using NLTK's \texttt{corpus\_bleu} over a fixed set of example sentence pairs (the validation set used in the code). Tokenization is performed at the word level by splitting on whitespace. To reduce zero-count issues typical in early-stage generation, smoothing is applied using NLTK's smoothing method4. Decoding at inference time uses greedy autoregressive generation to produce the predicted Hindi sequence.
+
+\subsection{Qualitative evaluation (baseline)}
+The baseline evaluation is performed on a small set of example sentences using greedy decoding and the produced translations are printed during execution.
+
+\section{Hyperparameter Tuning with Ray Tune + Optuna (Part 2)}
+The assignment requires refactoring the training loop such that Ray Tune can control and observe training progress. The implementation is contained in \texttt{b22cs001\_ass\_4\_tuned\_en\_to\_hi.py}.
+
+\subsection{Ray Tune compatible training function}
+The training loop is refactored into a Ray Tune entrypoint (e.g., \texttt{train\_tune(config)}), which:
+\begin{itemize}
+  \item Accepts a configuration dictionary \texttt{config}
+  \item Initializes the Transformer, optimizer, and loss function using config values
+  \item Reports intermediate training loss each epoch to Ray using \texttt{ray.train.report(\{"loss": epoch\_loss\})}; the standard training print/checkpoint behavior is replaced in the Ray worker by this metric reporting
+\end{itemize}
+
+\subsection{Search space}
+Ray Tune defines a search space over at least four hyperparameters. Based on the implementation and tuning configuration recorded in \texttt{results.txt}, the tuned variables include:
+\begin{itemize}
+  \item \textbf{Learning rate} (\texttt{lr}): log-uniform in $[10^{-5}, 10^{-3}]$
+  \item \textbf{Batch size} (\texttt{batch\_size}): choice $\{16, 32, 64\}$
+  \item \textbf{Number of attention heads} (\texttt{num\_heads}): choice $\{4, 8\}$ with \texttt{d\_model}=512 ensuring divisibility
+  \item \textbf{Feed-forward dimension} (\texttt{d\_ff}): choice $\{1024, 2048\}$
+  \item \textbf{Dropout} (\texttt{dropout}): uniform in $[0.1, 0.4]$
+\end{itemize}
+
+\subsection{Optuna search algorithm}
+Optuna is used as the search algorithm with an objective of minimizing training loss (metric \texttt{loss}, mode \texttt{min}):
+\[
+ \min \; \text{loss}.
+ \]
+
+In practice, Ray Tune observes intermediate progress via the reported training loss at each epoch and uses this value as the optimization signal for Optuna and the ASHA scheduler.
+
+The hyperparameter sweep is executed by instantiating a Ray Tune \texttt{Tuner} configured with an \texttt{OptunaSearch} instance and running \texttt{tuner.fit()}.
+
+\subsection{ASHA scheduling}
+To improve efficiency, ASHA is used as the early-stopping mechanism. In the observed run, each trial is capped at a maximum of \texttt{max\_epochs}=7, and ASHA terminates poor trials early based on reported loss.
+
+\section{Efficiency Challenge (Part 3)}
+Training the Transformer for 100 epochs is computationally expensive. The tuning stage limits each trial to a maximum of \textbf{7 epochs} and uses ASHA to stop underperforming trials earlier.
+
+\subsection{Trial budget and sweep runtime}
+From the Ray Tune section in \texttt{results.txt}, the sweep contains 5 trials and completes in:
+\[
+23 \text{ min } 36 \text{ s}.
+\]
+
+\subsection{Ray Tune trial summary}
+The table below summarizes the five trials reported in \texttt{results.txt}. Each trial is terminated either at the ASHA stopping point or at the trial cap of 7 epochs.
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{@{}l@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{10pt}}r@{\hspace{10pt}}r@{}}
+    \toprule
+    \textbf{Trial} & \textbf{lr} & \textbf{batch} & \textbf{heads} & \textbf{d\_ff} & \textbf{dropout} & \textbf{loss @ epoch} \\
+    \midrule
+    train\_tune\_2ac5ebd1 & 5.96869e-05 & 32 & 8 & 1024 & 0.373121 & 3.67058 @ 7 \\
+    train\_tune\_03ea0d7b  & 1.49556e-04 & 16 & 4 & 1024 & 0.335692 & 2.49305 @ 7 \\
+    train\_tune\_af5ff1f0  & 1.10794e-04 & 32 & 4 & 1024 & 0.182719 & 2.09566 @ 7 \\
+    train\_tune\_68ab2bba & 3.75870e-04 & 32 & 4 & 1024 & 0.185506 & 5.53649 @ 1 \\
+    train\_tune\_26b82bf1 & 9.38233e-04 & 32 & 8 & 1024 & 0.157823 & 6.03208 @ 1 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Ray Tune trial outcomes (5 trials).}
+\end{table}
+
+\subsection{Best hyperparameters from Ray Tune}
+The best trial is:
+\begin{itemize}
+  \item \texttt{lr = 1.10794e-04}
+  \item \texttt{batch\_size = 32}
+  \item \texttt{num\_heads = 4}
+  \item \texttt{d\_ff = 1024}
+  \item \texttt{dropout = 0.182719}
+  \item \texttt{max\_epochs (trial cap) = 7}
+\end{itemize}
+
+\section{Final Tuned Model Training and Evaluation}
+After selecting the best hyperparameters from Ray Tune, the model is retrained for \textbf{90 epochs} using the optimized configuration. This step is performed to validate that the found hyperparameters generalize beyond the short trial horizon.
+
+\subsection{Final tuned BLEU score}
+From \texttt{results.txt}, the tuned model achieves:
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{@{}l@{\hspace{12pt}}l@{}}
+    \toprule
+    \textbf{Metric} & \textbf{Value} \\
+    \midrule
+    Tuned model BLEU score (NLTK) & 75.66 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Final tuned performance.}
+\end{table}
+
+\subsection{Improvement over baseline}
+The improvement relative to the baseline is:
+\[
+75.66 - 49.53 = 26.13 \text{ BLEU points}.
+ \]
+This surpasses the assignment requirement of matching or exceeding baseline BLEU.
+
+\subsection{Qualitative translations (tuned model)}
+The tuned model outputs translations for representative English sentences as follows:
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{@{}l@{\hspace{16pt}}l@{}}
+    \toprule
+    \textbf{English input} & \textbf{Predicted Hindi output} \\
+    \midrule
+    I love you. & main tumse pyaar karta hoon. \\
+    What is your name? & tumhara naam kya hai? \\
+    How are you? & tu kaisi hai? \\
+    The weather is nice today. & aaj mausam achchha hai. \\
+    She is a good teacher. & vah ek achchha shikshak hai. \\
+    \bottomrule
+  \end{tabular}
+  \caption{Greedy-decoded qualitative examples from the tuned model.}
+\end{table}
+
+\section{Discussion}
+The results highlight two key findings:
+\begin{itemize}
+  \item \textbf{Hyperparameter sensitivity:} Adjusting learning rate, batch size, attention configuration, feed-forward width, and dropout leads to substantial BLEU gains. The best configuration uses moderate attention complexity (4 heads) paired with \texttt{d\_ff}=1024 and dropout around 0.18.
+  \item \textbf{Efficiency through ASHA:} Trials that performed poorly were terminated early (e.g., some trials ended at epoch 1), reducing compute consumption compared to fully training each candidate for the entire 100-epoch schedule.
+\end{itemize}
+Overall, the combined Optuna + ASHA strategy offers a principled approach to locate strong configurations quickly and then confirm them through longer retraining.
+
+\section{Conclusion}
+This work successfully demonstrates efficient hyperparameter optimization for Transformer-based English-to-Hindi translation. A baseline Transformer trained for 100 epochs achieves a BLEU score of 49.53. Using Ray Tune with Optuna and an ASHA scheduler, a set of hyperparameters is selected via training-loss minimization under a trial epoch cap of 7 epochs. Retraining with the best-found configuration yields a BLEU score of 75.66, which represents an improvement of 26.13 BLEU points over the baseline.
+
+\section*{Reproducibility Note}
+The implementation and experimental workflow are provided in \texttt{b22cs001\_ass\_4\_tuned\_en\_to\_hi.ipynb}. All reported metrics and configurations are extracted from \texttt{b22cs001\_ass\_4\_tuned\_en\_to\_hi.ipynb}.
+
+\end{document}
