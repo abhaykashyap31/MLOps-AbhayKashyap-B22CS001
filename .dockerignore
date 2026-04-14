@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git/
+.idea/
+.vscode/
+.env
+data/
+q1_outputs/
+q2_outputs/
+results/
+wandb/
+report.aux
+report.log
+report.out
+report.pdf

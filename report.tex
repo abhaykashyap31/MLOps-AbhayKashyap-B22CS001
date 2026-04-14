@@ -1,0 +1,255 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{caption}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\title{DLOps Assignment-5 Report\\LoRA on ViT-S and IBM ART Adversarial Experiments}
+\author{}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\section{Execution Environment}
+The Q1 experiments reported here were executed in a CPU-only workflow for training, evaluation, attack generation, detector training, plotting, and model export. The Q2 section below has been updated using the latest recorded run log in the workspace.
+
+\section{Q1: LoRA on ViT-S for CIFAR-100}
+\subsection{Objective}
+The goal was to finetune an ImageNet-pretrained ViT-S model on CIFAR-100 in two settings:
+\begin{itemize}
+    \item baseline head-only finetuning without LoRA,
+    \item LoRA-based adaptation over multiple rank and alpha combinations with dropout fixed at 0.1.
+\end{itemize}
+The assignment also required train/validation metrics, test comparison tables, class-wise accuracy histograms, gradient-update plots on LoRA weights, Optuna tuning, and model publication.
+
+\subsection{Implementation Summary}
+The final Q1 pipeline uses the following design choices:
+\begin{itemize}
+    \item Base model: \texttt{vit\_small\_patch16\_224} from \texttt{timm}, pretrained on ImageNet.
+    \item Dataset: CIFAR-100.
+    \item Baseline: backbone frozen, classification head trainable.
+    \item LoRA grid: ranks \{2,4,8\}, alpha \{2,4,8\}, dropout \(=0.1\).
+    \item Data preprocessing: resize to \(224 \times 224\), CIFAR-100 normalization, random crop, and horizontal flip.
+    \item Optimizer: AdamW.
+    \item Scheduler: cosine annealing.
+    \item Additional logging: LoRA gradient norms were recorded and plotted.
+\end{itemize}
+
+\subsection{Important Note on Q, K, V Injection}
+The assignment asks for LoRA injection into the attention weights of \(Q\), \(K\), and \(V\). In the \texttt{timm} ViT implementation used here, these projections are exposed as a \textbf{single fused} linear layer named \texttt{qkv} rather than separate \texttt{q\_proj}, \texttt{k\_proj}, and \texttt{v\_proj} modules. Therefore, LoRA was applied to the fused \texttt{qkv} projection. This is the correct implementation choice for this codebase and is explicitly documented here to avoid ambiguity.
+
+\subsection{Recorded Training Metrics}
+The saved CSV histories in the workspace contain one recorded epoch entry for each experiment. Table~\ref{tab:q1-train} consolidates those saved values.
+
+\begin{longtable}{lccccc}
+\caption{Q1 recorded training summary from saved history CSV files.}
+\label{tab:q1-train}\\
+\toprule
+Experiment & Train Loss & Val Loss & Train Acc & Val Acc & LoRA Grad Norm \\
+\midrule
+\endfirsthead
+\toprule
+Experiment & Train Loss & Val Loss & Train Acc & Val Acc & LoRA Grad Norm \\
+\midrule
+\endhead
+baseline & 1.2034 & 0.7585 & 0.7155 & 0.7887 & 0.0000 \\
+lora\_r2\_a2 & 0.8025 & 0.3995 & 0.8003 & 0.8764 & 25452.0160 \\
+lora\_r2\_a4 & 0.7781 & 0.3910 & 0.8065 & 0.8768 & 37978.1629 \\
+lora\_r2\_a8 & 0.7756 & 0.4019 & 0.8052 & 0.8840 & 53662.8436 \\
+lora\_r4\_a2 & 0.8055 & 0.3989 & 0.7999 & 0.8800 & 18169.9222 \\
+lora\_r4\_a4 & 0.7918 & 0.4048 & 0.8003 & 0.8806 & 27059.0788 \\
+lora\_r4\_a8 & 0.7568 & 0.3939 & 0.8099 & 0.8782 & 38369.1075 \\
+lora\_r8\_a2 & 0.8070 & 0.3981 & 0.8000 & 0.8796 & 13571.7572 \\
+lora\_r8\_a4 & 0.7875 & 0.3938 & 0.8047 & 0.8798 & 19525.9257 \\
+lora\_r8\_a8 & 0.7602 & 0.3812 & 0.8096 & 0.8852 & 27844.0375 \\
+lora\_partial\_freeze & 0.7631 & 0.3836 & 0.8069 & 0.8782 & 27825.9369 \\
+optuna\_best\_r2\_a2 & 0.6246 & 0.4760 & 0.8236 & 0.8576 & 28270.8415 \\
+\bottomrule
+\end{longtable}
+
+\subsection{Overall Test Results}
+Table~\ref{tab:q1-test} follows the format requested in the assignment and compares baseline and LoRA runs.
+
+\begin{table}[H]
+\centering
+\caption{Q1 overall testing results.}
+\label{tab:q1-test}
+\begin{tabular}{lccccc}
+\toprule
+LoRA & Rank & Alpha & Dropout & Test Accuracy & Trainable Params \\
+\midrule
+No & 0 & 0 & 0.0 & 0.7791 & 38500 \\
+Yes & 2 & 2 & 0.1 & 0.8734 & 75364 \\
+Yes & 2 & 4 & 0.1 & 0.8772 & 75364 \\
+Yes & 2 & 8 & 0.1 & 0.8746 & 75364 \\
+Yes & 4 & 2 & 0.1 & 0.8727 & 112228 \\
+Yes & 4 & 4 & 0.1 & 0.8764 & 112228 \\
+Yes & 4 & 8 & 0.1 & \textbf{0.8778} & 112228 \\
+Yes & 8 & 2 & 0.1 & 0.8725 & 185956 \\
+Yes & 8 & 4 & 0.1 & 0.8751 & 185956 \\
+Yes & 8 & 8 & 0.1 & 0.8775 & 185956 \\
+Yes & 8 & 8 & 0.1 & 0.8712 & 185956 \\
+Yes & 2 & 2 & 0.1 & 0.8510 & 75364 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Observations}
+\begin{itemize}
+    \item The baseline head-only finetuning reached a test accuracy of \(0.7791\).
+    \item The best fixed-grid LoRA setting was \texttt{rank=4}, \texttt{alpha=8}, \texttt{dropout=0.1}, with test accuracy \(0.8778\).
+    \item This is an absolute improvement of \(0.0987\) over the baseline.
+    \item Several LoRA settings performed very similarly, which indicates that the method is robust over a modest hyperparameter range.
+    \item The optional partial-freeze + LoRA run (\(0.8712\)) did not improve over the best fully frozen-backbone LoRA result.
+    \item The Optuna-selected configuration trained in the final run achieved \(0.8510\), which was below the best manually enumerated grid result in this experiment set.
+\end{itemize}
+
+\subsection{Optuna and Model Export}
+Optuna was used to search LoRA-only hyperparameters. The best trial used:
+\begin{itemize}
+    \item rank \(=2\),
+    \item alpha \(=2\),
+    \item learning rate \(=0.002718177657750734\).
+\end{itemize}
+The best model artifacts from the experiment set were exported and uploaded to Hugging Face Hub under \texttt{subilal/lora-vit-cifar100}. WandB logging was also enabled in the script.
+
+\subsection{Experiment Links}
+\begin{itemize}
+    \item Hugging Face model: \href{https://huggingface.co/subilal/lora-vit-cifar100}{subilal/lora-vit-cifar100}
+    \item WandB Q1 project: \href{https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100}{vit-lora-cifar100}
+    \item WandB Q2 project: \href{https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art}{dlops-assignment5-q2-art}
+\end{itemize}
+
+\subsection{Generated Q1 Figures}
+The best exported run available in the workspace is \texttt{lora\_r4\_a8}. The report includes the available plots for that run when the files are present.
+
+\begin{figure}[H]
+\centering
+\IfFileExists{results/q1_outputs/hf_exports/lora_r4_a8/lora_r4_a8_curves.png}{
+    \includegraphics[width=0.82\textwidth]{results/q1_outputs/hf_exports/lora_r4_a8/lora_r4_a8_curves.png}
+}{
+    \fbox{\parbox{0.82\textwidth}{Training and validation curve image not found in the current workspace snapshot.}}
+}
+\caption{Best Q1 run: train/validation loss and accuracy curves.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{results/q1_outputs/hf_exports/lora_r4_a8/lora_r4_a8_gradients.png}{
+    \includegraphics[width=0.62\textwidth]{results/q1_outputs/hf_exports/lora_r4_a8/lora_r4_a8_gradients.png}
+}{
+    \fbox{\parbox{0.62\textwidth}{LoRA gradient norm plot not found in the current workspace snapshot.}}
+}
+\caption{Best Q1 run: LoRA gradient-update graph.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{results/q1_outputs/hf_exports/lora_r4_a8/lora_r4_a8_hist.png}{
+    \includegraphics[width=0.82\textwidth]{results/q1_outputs/hf_exports/lora_r4_a8/lora_r4_a8_hist.png}
+}{
+    \fbox{\parbox{0.82\textwidth}{Class-wise histogram image not found in the current workspace snapshot.}}
+}
+\caption{Best Q1 run: class-wise test accuracy histogram.}
+\end{figure}
+
+\section{Q2: Adversarial Attacks Using IBM ART}
+\subsection{Objective}
+This part has two components:
+\begin{itemize}
+    \item compare FGSM implemented from scratch versus FGSM from IBM ART on CIFAR-10 using a ResNet-18 classifier trained from scratch,
+    \item train adversarial detectors on mixed clean/adversarial samples for PGD and BIM attacks using ResNet-34 based models.
+\end{itemize}
+
+\subsection{Implementation Summary}
+The Q2 pipeline trains a clean ResNet-18 classifier, evaluates FGSM attacks over multiple epsilon values, and then trains two binary detectors:
+\begin{itemize}
+    \item PGD detector: clean vs PGD-adversarial,
+    \item BIM detector: clean vs BIM-adversarial.
+\end{itemize}
+The script generates visual comparisons for FGSM scratch, FGSM ART, PGD, and BIM, and logs those artifacts to WandB together with image tables, metrics, and attack summaries. The current workspace snapshot contains an updated Q2 run log and the corresponding WandB links.
+
+\subsection{Clean Classification Accuracy}
+In the latest recorded run, the clean CIFAR-10 classifier reached a final test accuracy of \(\mathbf{0.8350}\), which satisfies the assignment requirement of at least \(0.72\).
+
+\subsection{FGSM Comparison}
+\begin{table}[H]
+\centering
+\caption{FGSM comparison on CIFAR-10 using the latest recorded Q2 run.}
+\label{tab:q2-fgsm}
+\begin{tabular}{cccccc}
+\toprule
+Epsilon & Clean Acc & Scratch Acc & ART Acc & Scratch Drop & ART Drop \\
+\midrule
+0.0000 & 0.8350 & 0.8350 & 0.8350 & 0.0000 & 0.0000 \\
+0.0100 & 0.8350 & 0.6971 & 0.7646 & 0.1379 & 0.0704 \\
+0.0200 & 0.8350 & 0.5568 & 0.6449 & 0.2782 & 0.1901 \\
+0.0300 & 0.8350 & 0.4302 & 0.5226 & 0.4048 & 0.3124 \\
+0.0500 & 0.8350 & 0.2517 & 0.3474 & 0.5833 & 0.4876 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Adversarial Detector Results}
+\begin{table}[H]
+\centering
+\caption{Best detector test accuracy for each attack family.}
+\label{tab:q2-detectors}
+\begin{tabular}{lc}
+\toprule
+Detector Attack & Best Detection Accuracy \\
+\midrule
+PGD & 0.7147 \\
+BIM & \textbf{0.7215} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Observations}
+\begin{itemize}
+    \item The clean classifier exceeded the required clean accuracy threshold comfortably.
+    \item Increasing epsilon caused a steady degradation in accuracy for both FGSM implementations.
+    \item In this run, IBM ART FGSM consistently retained higher classifier accuracy than the scratch FGSM implementation at the same epsilon values.
+    \item Both detector models crossed the required \(70\%\) detection accuracy threshold.
+    \item The BIM detector was again slightly stronger than the PGD detector in the latest recorded run.
+    \item The updated WandB run logged the attack galleries, comparison plots, tabular summaries, and clean/adversarial sample tables required by the assignment prompt.
+\end{itemize}
+
+\subsection{Q2 WandB References}
+\begin{itemize}
+    \item WandB project: \href{https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art}{dlops-assignment5-q2-art}
+    \item Latest recorded run link: \href{https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art/runs/xocojyht}{worthy-sponge-1}
+\end{itemize}
+
+\section{Conclusion}
+This assignment demonstrates two complementary themes: parameter-efficient finetuning and robustness evaluation.
+\begin{itemize}
+    \item For Q1, LoRA substantially improved CIFAR-100 performance over baseline head-only finetuning, with the best result coming from \texttt{rank=4}, \texttt{alpha=8}.
+    \item For Q2, the clean ResNet-18 classifier achieved strong performance, while adversarial robustness degraded with stronger FGSM perturbations as expected.
+    \item The PGD and BIM detectors both met the minimum performance target.
+\end{itemize}
+
+\section{External Links}
+\begin{itemize}
+    \item Hugging Face model: \href{https://huggingface.co/subilal/lora-vit-cifar100}{subilal/lora-vit-cifar100}
+    \item WandB Q1: \href{https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100}{vit-lora-cifar100}
+    \item WandB Q2: \href{https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art}{dlops-assignment5-q2-art}
+\end{itemize}
+
+\end{document}

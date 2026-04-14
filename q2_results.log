@@ -1,0 +1,104 @@
+✅ HF token loaded
+✅ WandB key loaded
+Using device: cuda
+/usr/local/lib/python3.12/dist-packages/notebook/notebookapp.py:191: SyntaxWarning: invalid escape sequence '\/'
+  | |_| | '_ \/ _` / _` |  _/ -_)
+wandb: WARNING If you're specifying your api key in code, ensure this code is not shared publicly.
+wandb: WARNING Consider setting the WANDB_API_KEY environment variable, or running `wandb login` from the command line.
+wandb: [wandb.login()] Using explicit session credentials for https://api.wandb.ai.
+wandb: No netrc file found, creating one.
+wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
+wandb: Currently logged in as: abhikashyap4563 (abhikashyap4563-iit-jodhpur) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+Tracking run with wandb version 0.25.0
+Run data is saved locally in /kaggle/working/wandb/run-20260414_174830-xocojyht
+Syncing run worthy-sponge-1 to Weights & Biases (docs)
+View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art
+View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art/runs/xocojyht
+WandB URL: https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art/runs/xocojyht
+100%|██████████| 170M/170M [00:03<00:00, 56.3MB/s] 
+Epoch 1/20: train_acc=0.4358, test_acc=0.4902
+Epoch 2/20: train_acc=0.5715, test_acc=0.6195
+Epoch 3/20: train_acc=0.6413, test_acc=0.6700
+Epoch 4/20: train_acc=0.6781, test_acc=0.7039
+Epoch 5/20: train_acc=0.7139, test_acc=0.7087
+Epoch 6/20: train_acc=0.7343, test_acc=0.7359
+Epoch 7/20: train_acc=0.7555, test_acc=0.7550
+Epoch 8/20: train_acc=0.7703, test_acc=0.7590
+Epoch 9/20: train_acc=0.7834, test_acc=0.7795
+Epoch 10/20: train_acc=0.8012, test_acc=0.7887
+Epoch 11/20: train_acc=0.8122, test_acc=0.7954
+Epoch 12/20: train_acc=0.8220, test_acc=0.8082
+Epoch 13/20: train_acc=0.8345, test_acc=0.8135
+Epoch 14/20: train_acc=0.8452, test_acc=0.8127
+Epoch 15/20: train_acc=0.8557, test_acc=0.8232
+Epoch 16/20: train_acc=0.8641, test_acc=0.8246
+Epoch 17/20: train_acc=0.8708, test_acc=0.8321
+Epoch 18/20: train_acc=0.8768, test_acc=0.8344
+Epoch 19/20: train_acc=0.8803, test_acc=0.8338
+Epoch 20/20: train_acc=0.8825, test_acc=0.8350
+Clean test accuracy: 0.8350
+eps=0.0000 | clean=0.8350, scratch=0.8350, art=0.8350
+eps=0.0100 | clean=0.8350, scratch=0.6971, art=0.7646
+eps=0.0200 | clean=0.8350, scratch=0.5568, art=0.6449
+eps=0.0300 | clean=0.8350, scratch=0.4302, art=0.5226
+eps=0.0500 | clean=0.8350, scratch=0.2517, art=0.3474
+[PGD] Epoch 1/20, train_acc=0.6203, detector test acc=0.6735
+[PGD] Epoch 2/20, train_acc=0.6586, detector test acc=0.6735
+[PGD] Epoch 3/20, train_acc=0.6702, detector test acc=0.6855
+[PGD] Epoch 4/20, train_acc=0.6835, detector test acc=0.6967
+[PGD] Epoch 5/20, train_acc=0.6845, detector test acc=0.6990
+[PGD] Epoch 6/20, train_acc=0.6923, detector test acc=0.7013
+[PGD] Epoch 7/20, train_acc=0.6959, detector test acc=0.7030
+[PGD] Epoch 8/20, train_acc=0.6987, detector test acc=0.6985
+[PGD] Epoch 9/20, train_acc=0.7040, detector test acc=0.7067
+[PGD] Epoch 10/20, train_acc=0.7049, detector test acc=0.6970
+[PGD] Epoch 11/20, train_acc=0.7110, detector test acc=0.7003
+[PGD] Epoch 12/20, train_acc=0.7134, detector test acc=0.6967
+[PGD] Epoch 13/20, train_acc=0.7157, detector test acc=0.7127
+[PGD] Epoch 14/20, train_acc=0.7178, detector test acc=0.7077
+[PGD] Epoch 15/20, train_acc=0.7215, detector test acc=0.7137
+[PGD] Epoch 16/20, train_acc=0.7187, detector test acc=0.7147
+[PGD] Epoch 17/20, train_acc=0.7236, detector test acc=0.7013
+[PGD] Epoch 18/20, train_acc=0.7281, detector test acc=0.7070
+[PGD] Epoch 19/20, train_acc=0.7274, detector test acc=0.7117
+[PGD] Epoch 20/20, train_acc=0.7327, detector test acc=0.7123
+[BIM] Epoch 1/20, train_acc=0.6163, detector test acc=0.6783
+[BIM] Epoch 2/20, train_acc=0.6607, detector test acc=0.6885
+[BIM] Epoch 3/20, train_acc=0.6701, detector test acc=0.6955
+[BIM] Epoch 4/20, train_acc=0.6766, detector test acc=0.7015
+[BIM] Epoch 5/20, train_acc=0.6852, detector test acc=0.6945
+[BIM] Epoch 6/20, train_acc=0.6907, detector test acc=0.6980
+[BIM] Epoch 7/20, train_acc=0.6964, detector test acc=0.7077
+[BIM] Epoch 8/20, train_acc=0.7012, detector test acc=0.6937
+[BIM] Epoch 9/20, train_acc=0.7027, detector test acc=0.7030
+[BIM] Epoch 10/20, train_acc=0.7036, detector test acc=0.7027
+[BIM] Epoch 11/20, train_acc=0.7095, detector test acc=0.7070
+[BIM] Epoch 12/20, train_acc=0.7228, detector test acc=0.7115
+[BIM] Epoch 13/20, train_acc=0.7221, detector test acc=0.7195
+[BIM] Epoch 14/20, train_acc=0.7244, detector test acc=0.7135
+[BIM] Epoch 15/20, train_acc=0.7294, detector test acc=0.7143
+[BIM] Epoch 16/20, train_acc=0.7302, detector test acc=0.7155
+[BIM] Epoch 17/20, train_acc=0.7315, detector test acc=0.7107
+[BIM] Epoch 18/20, train_acc=0.7411, detector test acc=0.7155
+[BIM] Epoch 19/20, train_acc=0.7438, detector test acc=0.7215
+[BIM] Epoch 20/20, train_acc=0.7432, detector test acc=0.7145
+
+
+Run summary:
+
+classifier/epoch	20
+classifier/lr	0
+classifier/test_acc	0.835
+classifier/test_loss	0.49554
+classifier/train_acc	0.88248
+classifier/train_loss	0.3347
+classifier_best_test_accuracy	0.835
+clean_test_accuracy	0.835
+detector/bim/epoch	20
+detector/bim/lr	0.00025
+
+View run worthy-sponge-1 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art/runs/xocojyht
+View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/dlops-assignment5-q2-art
+Synced 5 W&B file(s), 13 media file(s), 94 artifact file(s) and 0 other file(s)
+Find logs at: ./wandb/run-20260414_174830-xocojyht/logs
+Q2 completed.

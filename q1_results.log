@@ -1,0 +1,411 @@
+✅ HF token loaded
+✅ WandB key loaded
+wandb: WARNING If you're specifying your api key in code, ensure this code is not shared publicly.
+wandb: WARNING Consider setting the WANDB_API_KEY environment variable, or running `wandb login` from the command line.
+wandb: [wandb.login()] Using explicit session credentials for https://api.wandb.ai.
+wandb: No netrc file found, creating one.
+wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
+wandb: Currently logged in as: abhikashyap4563 (abhikashyap4563-iit-jodhpur) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+100%|██████████| 169M/169M [00:02<00:00, 63.7MB/s]
+🚀 Running Baseline
+wandb: setting up run eojyisdb
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_085311-eojyisdb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run baseline
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/eojyisdb
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 0
+wandb:         lr 0.0002
+wandb:  train_acc 0.71545
+wandb: train_loss 1.20343
+wandb:    val_acc 0.78874
+wandb:   val_loss 0.75855
+wandb: 
+wandb: 🚀 View run baseline at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/eojyisdb
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_085311-eojyisdb/logs
+🚀 Running LoRA Grid Search
+Running r=2, alpha=2
+wandb: setting up run a5y6pvq7
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_085747-a5y6pvq7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r2_a2
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/a5y6pvq7
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 25452.01596
+wandb:         lr 0.0002
+wandb:  train_acc 0.8003
+wandb: train_loss 0.80249
+wandb:    val_acc 0.8764
+wandb:   val_loss 0.39946
+wandb: 
+wandb: 🚀 View run lora_r2_a2 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/a5y6pvq7
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_085747-a5y6pvq7/logs
+Running r=2, alpha=4
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_090651-wgegyxgq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r2_a4
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/wgegyxgq
+wandb: updating run metadata
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 37978.16294
+wandb:         lr 0.0002
+wandb:  train_acc 0.80648
+wandb: train_loss 0.77815
+wandb:    val_acc 0.8768
+wandb:   val_loss 0.391
+wandb: 
+wandb: 🚀 View run lora_r2_a4 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/wgegyxgq
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_090651-wgegyxgq/logs
+Running r=2, alpha=8
+wandb: setting up run u6bl77pz
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_091551-u6bl77pz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r2_a8
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/u6bl77pz
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 53662.84365
+wandb:         lr 0.0002
+wandb:  train_acc 0.80523
+wandb: train_loss 0.77558
+wandb:    val_acc 0.88399
+wandb:   val_loss 0.40193
+wandb: 
+wandb: 🚀 View run lora_r2_a8 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/u6bl77pz
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_091551-u6bl77pz/logs
+Running r=4, alpha=2
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_092447-8bitvoq6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r4_a2
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/8bitvoq6
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 18169.92222
+wandb:         lr 0.0002
+wandb:  train_acc 0.7999
+wandb: train_loss 0.80548
+wandb:    val_acc 0.87999
+wandb:   val_loss 0.39888
+wandb: 
+wandb: 🚀 View run lora_r4_a2 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/8bitvoq6
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_092447-8bitvoq6/logs
+Running r=4, alpha=4
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_093344-paulixfa
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r4_a4
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/paulixfa
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 27059.07876
+wandb:         lr 0.0002
+wandb:  train_acc 0.80035
+wandb: train_loss 0.79179
+wandb:    val_acc 0.88059
+wandb:   val_loss 0.40481
+wandb: 
+wandb: 🚀 View run lora_r4_a4 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/paulixfa
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_093344-paulixfa/logs
+Running r=4, alpha=8
+wandb: setting up run zqf66xu5
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_094246-zqf66xu5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r4_a8
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/zqf66xu5
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 38369.10748
+wandb:         lr 0.0002
+wandb:  train_acc 0.80986
+wandb: train_loss 0.75676
+wandb:    val_acc 0.87819
+wandb:   val_loss 0.39386
+wandb: 
+wandb: 🚀 View run lora_r4_a8 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/zqf66xu5
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_094246-zqf66xu5/logs
+Running r=8, alpha=2
+wandb: setting up run en6zafo5
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_095147-en6zafo5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r8_a2
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/en6zafo5
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 13571.75719
+wandb:         lr 0.0002
+wandb:  train_acc 0.80004
+wandb: train_loss 0.80697
+wandb:    val_acc 0.87959
+wandb:   val_loss 0.3981
+wandb: 
+wandb: 🚀 View run lora_r8_a2 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/en6zafo5
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_095147-en6zafo5/logs
+Running r=8, alpha=4
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_100046-2v7mz1gd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r8_a4
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/2v7mz1gd
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 19525.92565
+wandb:         lr 0.0002
+wandb:  train_acc 0.80468
+wandb: train_loss 0.78751
+wandb:    val_acc 0.87979
+wandb:   val_loss 0.39376
+wandb: 
+wandb: 🚀 View run lora_r8_a4 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/2v7mz1gd
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_100046-2v7mz1gd/logs
+Running r=8, alpha=8
+wandb: setting up run 3nc40xxs
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_100943-3nc40xxs
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_r8_a8
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/3nc40xxs
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 27844.0375
+wandb:         lr 0.0002
+wandb:  train_acc 0.80957
+wandb: train_loss 0.76022
+wandb:    val_acc 0.88518
+wandb:   val_loss 0.38115
+wandb: 
+wandb: 🚀 View run lora_r8_a8 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/3nc40xxs
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_100943-3nc40xxs/logs
+🚀 Running Optional Partial Freeze + LoRA
+wandb: setting up run 6hcyfvnr
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_101837-6hcyfvnr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lora_partial_freeze
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/6hcyfvnr
+wandb: updating run metadata
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 27825.93688
+wandb:         lr 0.0002
+wandb:  train_acc 0.80686
+wandb: train_loss 0.76306
+wandb:    val_acc 0.87819
+wandb:   val_loss 0.38361
+wandb: 
+wandb: 🚀 View run lora_partial_freeze at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/6hcyfvnr
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_101837-6hcyfvnr/logs
+[I 2026-04-14 10:27:35,740] A new study created in memory with name: no-name-aa66281e-0f00-400d-8999-dc47609399df
+🚀 Running Optuna Hyperparameter Search
+[I 2026-04-14 10:35:44,580] Trial 0 finished with value: 0.7881389776357828 and parameters: {'r': 4, 'alpha': 16, 'lr': 0.002660798998618972}. Best is trial 0 with value: 0.7881389776357828.
+[I 2026-04-14 10:43:52,856] Trial 1 finished with value: 0.8550319488817891 and parameters: {'r': 2, 'alpha': 2, 'lr': 0.002718177657750734}. Best is trial 1 with value: 0.8550319488817891.
+[I 2026-04-14 10:52:07,931] Trial 2 finished with value: 0.8156948881789138 and parameters: {'r': 16, 'alpha': 4, 'lr': 0.004078555931626674}. Best is trial 1 with value: 0.8550319488817891.
+✅ Best Optuna Parameters: {'r': 2, 'alpha': 2, 'lr': 0.002718177657750734}
+
+🚀 Training Optuna Best LoRA Configuration
+wandb: setting up run vdcvwjzs
+wandb: Tracking run with wandb version 0.25.0
+wandb: Run data is saved locally in /kaggle/working/wandb/run-20260414_105208-vdcvwjzs
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run optuna_best_r2_a2
+wandb: ⭐️ View project at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: 🚀 View run at https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/vdcvwjzs
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary
+wandb: 
+wandb: Run history:
+wandb:  grad_norm ▁
+wandb:         lr ▁
+wandb:  train_acc ▁
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:  grad_norm 28270.84154
+wandb:         lr 0.00272
+wandb:  train_acc 0.82356
+wandb: train_loss 0.62458
+wandb:    val_acc 0.85763
+wandb:   val_loss 0.476
+wandb: 
+wandb: 🚀 View run optuna_best_r2_a2 at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100/runs/vdcvwjzs
+wandb: ⭐️ View project at: https://wandb.ai/abhikashyap4563-iit-jodhpur/vit-lora-cifar100
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260414_105208-vdcvwjzs/logs
+✅ FINAL RESULTS SAVED TO CSV and MD
+               name lora  rank  alpha  dropout  test_acc  params  hub_pushable
+         lora_r4_a8  Yes     4      8      0.1    0.8778  112228          True
+         lora_r8_a8  Yes     8      8      0.1    0.8775  185956          True
+         lora_r2_a4  Yes     2      4      0.1    0.8772   75364          True
+         lora_r4_a4  Yes     4      4      0.1    0.8764  112228          True
+         lora_r8_a4  Yes     8      4      0.1    0.8751  185956          True
+         lora_r2_a8  Yes     2      8      0.1    0.8746   75364          True
+         lora_r2_a2  Yes     2      2      0.1    0.8734   75364          True
+         lora_r4_a2  Yes     4      2      0.1    0.8727  112228          True
+         lora_r8_a2  Yes     8      2      0.1    0.8725  185956          True
+lora_partial_freeze  Yes     8      8      0.1    0.8712  185956         False
+  optuna_best_r2_a2  Yes     2      2      0.1    0.8510   75364          True
+           baseline   No     0      0      0.0    0.7791   38500         False
+
+🚀 Selecting Best Model...
+🏆 Best run: lora_r4_a8 with Accuracy: 0.8778
+HF_TOKEN exists: True
+Repo: subilal/lora-vit-cifar100
+
+☁️ Uploading lora_r4_a8 to Hugging Face Hub (subilal/lora-vit-cifar100)...
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/hf_api.py:9786: UserWarning: Warnings while validating metadata in README.md:
+- empty or missing yaml metadata in repo card
+  warnings.warn(f"Warnings while validating metadata in README.md:\n{message}")
+✅ Uploaded lora_r4_a8 to Hugging Face Hub under runs/lora_r4_a8
+✅ Uploaded 1 model artifact set(s) to Hugging Face Hub.

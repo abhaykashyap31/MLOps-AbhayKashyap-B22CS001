@@ -1,0 +1,17 @@
+{
+  "name": "lora_r4_a8",
+  "lora": "Yes",
+  "rank": 4,
+  "alpha": 8,
+  "dropout": 0.1,
+  "test_acc": 0.8777999999122202,
+  "params": 112228,
+  "hub_pushable": true,
+  "base_model": "vit_small_patch16_224",
+  "dataset": "CIFAR-100",
+  "attention_lora_target": "fused_qkv",
+  "attention_lora_note": "timm ViT exposes a fused qkv projection, so LoRA is applied to the combined QKV attention projection instead of separate q_proj, k_proj, and v_proj layers.",
+  "epochs": 1,
+  "batch_size": 16,
+  "learning_rate": 0.0002
+}

@@ -1,0 +1,37 @@
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    MPLBACKEND=Agg
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# CPU-only stack to stay consistent with the recorded runs/results.
+RUN pip install --upgrade pip && \
+    pip install --index-url https://download.pytorch.org/whl/cpu \
+    torch torchvision && \
+    pip install \
+    numpy \
+    pandas \
+    matplotlib \
+    scikit-learn \
+    "timm>=1.0.0" \
+    "peft>=0.13.0" \
+    "optuna>=3.6.0" \
+    "wandb>=0.17.0" \
+    "huggingface_hub>=0.24.0" \
+    tabulate
+
+COPY q1_vit_lora_cifar100.py ./q1_vit_lora_cifar100.py
+
+RUN mkdir -p /app/data /app/q1_outputs
+
+# Pass secrets at runtime instead of baking .env into the image.
+# Example:
+# docker run --rm -it --env-file .env assignment5-q1
+CMD ["python", "q1_vit_lora_cifar100.py"]
